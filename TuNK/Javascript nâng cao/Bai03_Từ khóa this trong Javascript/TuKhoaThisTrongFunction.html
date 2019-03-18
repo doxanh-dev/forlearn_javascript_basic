@@ -1,0 +1,37 @@
+<html>
+    <head>
+        <title>Từ khóa this trong Function</title>
+    </head>
+    <body>
+        Ten <input type="text" id="name"/><br>
+        Tuoi <input type="text" id="age"/><br>
+        Dia chi <input type="text" id="address"/><br>
+        <button type="submit" onclick="gui()">Submit</button>
+
+        <script>
+            function Person() {
+                this.name = '';
+                this.age = '';
+                this.address = '';
+
+                this.hienThi = function () {
+                    document.write("Ten: " + this.name + " - Tuoi: " + this.age + " - Dia chi: " + this.address);
+                };
+            }
+
+            function gui() {
+                //khoi tao doi tuong
+                var person = new Person();
+
+                //gan gia tri cho thuoc tinh
+                person.name = document.getElementById("name").value;
+                person.age = document.getElementById("age").value;
+                person.address = document.getElementById("address").value;
+
+                //hien thi thong tin
+                person.hienThi();
+            }
+
+        </script>
+    </body>
+</html>

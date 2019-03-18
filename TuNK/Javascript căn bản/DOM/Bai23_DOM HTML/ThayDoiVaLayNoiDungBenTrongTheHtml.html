@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Thay đổi nội dung HTML và lấy nội dung của một thẻ DIV</title>
+</head>
+
+<body>
+    <div id="content">Nội dung của thẻ DIV</div>
+    <input type="button" value="Lấy nội dung" id="get_content" onclick="get_content()" />
+    <input type="button" value="Thay đổi nội dung" id="set_content" onclick="set_content()" />
+
+    <script type="text/javascript">
+        function get_content(){
+            var html = document.getElementById("content").innerHTML;
+
+            alert("Nội dung cần lấy là: " + html);
+        }
+
+        function set_content(){
+            document.getElementById("content").innerHTML = "Noi dung da duoc thay doi";
+
+        }
+    </script>
+</body>
+
+</html>

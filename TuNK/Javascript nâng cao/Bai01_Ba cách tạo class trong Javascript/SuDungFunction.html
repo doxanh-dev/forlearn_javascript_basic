@@ -1,0 +1,41 @@
+<html>
+    <head>
+        <title>Tạo hàm Person như là một class</title>
+    </head>
+    <body>
+        <script>
+            function Person(){
+                //thuoc tinh
+                this.username = '';
+                this.password = '';
+
+                //phuong thuc
+                this.setInfo = function(username,password){
+                    this.username = username;
+                    this.password = password;
+                };
+
+                this.checkLogin = function(){
+                    return (this.username == 'admin' && this.password == '123');
+                }
+
+                return this;
+                
+            }
+            
+            //nhap username, password
+            var name = prompt("Moi nhap usernam:");
+            var pass = prompt("Moi nhap password:");
+
+            //tao doi tuong
+            var person = new Person();
+            person.setInfo(name,pass);
+            if(person.checkLogin()) {
+                alert("Ban dang nhap thanh cong");
+            }
+            else {
+                alert("Ban dang nhap khong thanh cong");
+            }
+        </script>
+    </body>
+</html>

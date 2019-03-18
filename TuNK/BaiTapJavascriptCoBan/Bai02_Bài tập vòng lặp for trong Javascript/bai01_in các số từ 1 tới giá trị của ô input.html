@@ -1,0 +1,38 @@
+<html>
+
+<head>
+    <title>in các số từ 1 tới giá trị của ô input</title>
+</head>
+
+<body>
+    <script>
+        function inSo() {
+            var soInput = document.getElementById("number");
+            if (soInput.value == "") {
+                alert("ban chua nhap so nao");
+                document.getElementById("result").innerHTML = "";
+                soInput.focus();
+                return;
+            }
+            else {
+                soInput = parseInt(soInput.value);
+                var html = '';
+                for (var i = 1; i <= soInput; i++) {
+                    html += i + ' - ';
+                }
+
+                //cat ky tu "-" va khoang trang o cuoi chuoi html
+                html = html.substring(0, html.length - 3);
+
+                //in ket qua ra view
+                document.getElementById("result").innerHTML = html;
+            }
+        }
+    </script>
+
+    Nhập số: <input type="text" id="number" value="" placeholder="Nhap so" />
+    <input type="button" value="In kết quả" onclick="inSo()" />
+    <div id="result"></div>
+</body>
+
+</html>

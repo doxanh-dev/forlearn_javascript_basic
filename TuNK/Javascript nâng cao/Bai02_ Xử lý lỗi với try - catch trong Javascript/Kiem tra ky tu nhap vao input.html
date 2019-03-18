@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Kiem tra ky tu nhap vao input</title>
+</head>
+
+<body>
+
+    <p>Nhap so co gia tri tu 6 den 10</p>
+
+    <input id="demo" type="text">
+    <button type="button" onclick="tryCatch()">Test Input</button>
+    <p id="error"></p>
+
+    <script>
+        function tryCatch() {
+            var message, x;
+            message = document.getElementById("error");
+            message.innerHTML = "";
+            x = document.getElementById("demo").value;
+            try {
+                if (x == "") throw "empty";
+                if (isNaN(x)) throw "not a number";
+                x = Number(x);
+                if (x < 5) throw "too low";
+                if (x > 10) throw "too high";
+            }
+            catch (err) {
+                message.innerHTML = "Input is " + err;
+            }
+        }
+    </script>
+
+</body>
+
+</html>

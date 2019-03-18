@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Sự kiện</title>
+</head>
+
+<body>
+    <!-- onkeyup -->
+    onkeyup: <input type="text" id="input" onkeyup="hienthi()">
+    <div id="message"></div>
+    <hr>
+
+    <!-- onchange -->
+    onchange:<select id="select" onchange="selected()">
+        <option value="gia tri 1">gia tri 1</option>
+        <option value="gia tri 2">gia tri 2</option>
+        <option value="gia tri 3">gia tri 3</option>
+    </select>
+    <div id="message_select"></div>
+    <hr>
+
+    <!-- onmouseover/onmouseout -->
+    onmouseover/onmouseout:<div id="demo" onmouseover="mouseover()" onmouseout="mouseout()">Day la vi du ve ham onmouseover</div>
+    <hr>
+
+    <!-- onkeydown -->
+    onkeydown: <input type="text" id="demo_keydown" onkeydown="keydown()">
+    <hr>
+
+    <!-- onblur -->
+    Onblur: <input type="text" onblur="Onblur()">
+    <hr>
+
+    <script type="text/javascript">
+        //ham onkeyup
+        function hienthi() {
+            var input = document.getElementById("input");
+            var message = document.getElementById("message");
+
+            message.innerHTML = input.value;
+        }
+
+        //ham onchange
+        function selected() {
+            var selected = document.getElementById("select");
+            var message_select = document.getElementById("message_select");
+
+            message_select.innerHTML = "Lua chon: " + selected.value;
+        }
+
+        //onmouseover
+        function mouseover() {
+            var div = document.getElementById("demo");
+            div.style.color = "red";
+            div.style.fontWeight = "bold";
+            div.style.fontSize = "18pt";
+        }
+
+        //onmouseout
+        function mouseout() {
+            var div = document.getElementById("demo");
+            div.style.color = "black";
+            div.style.fontWeight = "normal";
+            div.style.fontSize = "12pt";
+        }
+
+        //onkeydown
+        function keydown()
+        {
+            var demo_keydown = document.getElementById("demo_keydown");
+            demo_keydown.style.backgroundColor = "red";
+        }
+
+        //Onblur
+        function Onblur()
+        {
+            alert("Day la vi du ve ham Onblur");
+        }
+    </script>
+</body>
+
+</html>

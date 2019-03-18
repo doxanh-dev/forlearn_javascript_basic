@@ -1,0 +1,30 @@
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>Giải phương trình</title>
+        <script language="javascript">
+            function giaiPT() {
+                var a = document.getElementById("txtA").value;
+                var b = document.getElementById("txtB").value;
+                var kl = "";
+                if (a == 0) {
+                    if (b == 0)
+                        kl = "vsn";
+                    else
+                        kl = "vn";
+                }
+                else
+                    kl = -b / a;
+                document.getElementById("txtKL").value = kl;
+            }
+        </script>
+        
+    </head>
+
+    <body>
+        <input type="text" id="txtA" />x+<input type="text" id="txtB" />=0
+        <input type="button" onclick="giaiPT()" value="Giai phuong trinh" />
+        Ket luan<input type="text" id="txtKL" />
+    </body>
+
+</html>

@@ -1,0 +1,31 @@
+<html>
+
+<head>
+    <title>Tính giá trị của biểu thức co return</title>
+</head>
+
+<body>
+    <script>
+        function tinhGiaTri(n) {
+            var tong = 0;
+
+            for (var i = 1; i <= n; i++) {
+                tong += (i / n);
+            }
+
+            return tong;
+        }
+
+        var so = prompt("Nhap so");
+
+        if (so <= 0) {
+            alert("So nhap phai lon hon 0");
+        }
+        else {
+            var gia_tri_bieu_thuc = tinhGiaTri(so);
+            document.write("Tổng giá trị biểu thức là: " + gia_tri_bieu_thuc);
+        }
+    </script>
+</body>
+
+</html>

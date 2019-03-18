@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>Bai tap 001</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.25/css/uikit.min.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.25/js/uikit.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.25/js/uikit-icons.min.js"></script>
+
+    <link href="style.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="uk-container">
+        <fieldset class="uk-width-2-3 uk-margin-auto">
+            <div uk-grid>
+                <div class="uk-width-1-2">
+                    <label class="uk-width-1-1">Nhap mot tu Tieng Anh</label>
+                    <input type="text" id="textInput" class="uk-width-1-1 uk-input" placeholder="Nhập từ" />
+                    <button type="button" id="button" class="btn-button uk-button uk-button-primary uk-float-right">Kiểm tra</button>
+                </div>
+                <div class="uk-width-1-2">
+                    <textarea rows="10" class="uk-textarea" id="listData" placeholder="Danh sách từ tiếng Anh"></textarea>
+                </div>
+            </div>
+        </fieldset>
+    </div>
+
+    <script>
+        var listData = [];
+
+        var button = document.getElementById("button");
+
+        //add sự kiện click cho button
+        button.addEventListener("click", function () {
+            var text = document.getElementById("textInput");
+
+            if (text.value == "") {
+                UIkit.modal.alert("Vui lòng nhập từ tiếng Anh!").then(function () {
+                    text.focus();
+                });
+            }
+            else if (!validateEndlish(text.value)) {
+                UIkit.modal.alert("Từ nhập không đúng định dạng tiếng Anh!").then(function () {
+                    text.value = "";
+                    text.focus();
+                });
+            }
+            else {
+                //tim vi tri xuat hien cua tu khoa trong mang
+                var index = convertArrayToLower(listData).indexOf(text.value.toLowerCase());
+
+                //nếu index=-1 text khong có trong list và được thêm vào trong list
+                //ngược lại, sẽ confirm xóa từ đó trong list hay không
+                if (index == -1) {
+                    //them text vào mang listData
+                    listData.push(text.value);
+
+                    //gọi hàm hiển thị list dữ liệu
+                    getListData();
+
+                    text.value = "";
+                    text.focus();
+                }
+                else {
+                    UIkit.modal.confirm("Từ tiếng Anh xuất hiện ở ví thứ " + (index + 1) + " trong danh sách!").then(function () {
+                        //lay ra từ cần xóa
+                        var textDel = listData[index];
+
+                        //xoa từ tại vị trí index
+                        listData.splice(index, 1);
+
+                        UIkit.modal.alert("Bạn xóa thành công từ <b>" + textDel + "</b> trong danh sách!").then(function () {
+                            //gọi hàm hiển thị list dữ liệu
+                            getListData();
+
+                            text.value = "";
+                            text.focus();
+                        });
+                    }, function () {
+                        text.value = "";
+                        text.focus();
+                    });
+                }
+            }
+        });
+
+        // convert các từ trong mảng về chữ thường 
+        function convertArrayToLower(array) {
+            var result = [];
+            for (var i = 0; i < array.length; i++) {
+                result.push(array[i].toLowerCase());
+            }
+            return result;
+        }
+
+        //validate text là tieng Anh
+        function validateEndlish(text) {
+            var regExp = /^[A-Za-z0-9]*$/;
+            var result = text.match(regExp);
+            if (result) {
+                return true;
+            }
+            return false;
+        }
+
+        //hien thi list du lieu
+        function getListData() {
+            var list = document.getElementById("listData");
+            list.innerHTML = "";
+            for (var i = 0; i < listData.length; i++) {
+                list.innerHTML += listData[i] + "\n";
+            }
+        }
+    </script>
+</body>
+
+</html>

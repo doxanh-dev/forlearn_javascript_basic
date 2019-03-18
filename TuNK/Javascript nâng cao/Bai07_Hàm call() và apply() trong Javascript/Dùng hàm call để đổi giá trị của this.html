@@ -1,0 +1,19 @@
+<html>
+
+<head>
+    <title>Dùng hàm call để đổi giá trị của this</title>
+</head>
+
+<body>
+    <script>
+        function showMessage(name) {
+            this.name = name;
+            return this;
+        }
+
+        var blog = showMessage.call({ "blog": "doi tuong" }, "Nguyen Kim Tu");
+        console.log(blog);
+    </script>
+</body>
+
+</html>
