@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Bài tập 001 - UIkit</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Link UIkit -->
+    <link rel="stylesheet" href="css/uikit.min.css" />
+    <script src="js/uikit.min.js"></script>
+    <script src="js/uikit-icons.min.js"></script>
+</head>
+
+<body>
+    <div class="uk-container uk-container-expand uk-padding">
+
+        <div class="uk-child-width-expand@s" uk-grid>
+            <div class="uk-grid-item-match uk-text-center uk-text-lead uk-text-large">
+
+                <form class="uk-form-stacked uk-margin-small">
+                    <div class="uk-margin">
+
+                        <div class="uk-form-controls">
+                            <label class="uk-form-label uk-text-large" for="form-stacked-text">Nhập một từ tiếng Anh</label>
+                            <input id="wordCheck" class="uk-input uk-width-1-2 uk-form-primary" type="text" placeholder="...">
+                        </div>
+                        <button id="btnKiemTra" type="button" class="uk-button uk-button-primary">Kiểm tra</button>
+
+                    </div>
+                </form>
+
+            </div>
+
+            <div class="uk-grid-item-match uk-text-center">
+                <form class="uk-form-stacked uk-margin-small">
+                    <div class="uk-margin">
+
+                        <div class="uk-form-controls uk-text-center">
+                            <label class="uk-form-label uk-text-large " for="form-stacked-text">Danh sách từ được thêm</label>
+                            <textarea id="showWords" class="uk-textarea uk-form-success" rows="5" placeholder="Từ được thêm..."></textarea>
+                        </div>
+
+                    </div>
+                </form>
+            </div>
+        </div>
+
+    </div>
+
+
+    <script src="./js/BaiTap001UIkit.js"></script>
+</body>
+
+</html>

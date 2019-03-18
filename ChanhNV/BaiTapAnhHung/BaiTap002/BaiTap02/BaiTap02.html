@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Bài tập 02</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Link UIkit -->
+    <link rel="stylesheet" href="css/uikit.min.css" />
+    <script src="js/uikit.min.js"></script>
+    <script src="js/uikit-icons.min.js"></script>
+</head>
+
+<body>
+    <div class="uk-container uk-container-expand uk-padding">
+        <h4> Nhập vào 2 số nguyên, in ra dãy số chia hết cho 3 nhưng không chia hết cho 9 giữa 2 số này.</h4>
+        <div class="uk-child-width-expand@s" uk-grid>
+
+
+            <div class="uk-grid-item-match">
+
+                <form class="uk-form-stacked">
+
+                    <div class="uk-margin">
+                        <label class="uk-form-label" for="form-stacked-text">Nhập số thứ nhất:</label>
+                        <div class="uk-form-controls">
+                            <input id="SoThuNhat" class="uk-input" type="text" placeholder="Số thứ nhất...">
+                        </div>
+                    </div>
+
+                    <div class="uk-margin">
+                        <label class="uk-form-label" for="form-stacked-text">Nhập số thứ hai:</label>
+                        <div class="uk-form-controls">
+                            <input id="SoThuHai" class="uk-input" type="text" placeholder="Số thứ hai...">
+                        </div>
+                    </div>
+
+                    <div class="uk-margin uk-text-center">
+                        <button id="btnTinh" type="button"  class="uk-button uk-button-secondary uk-width-1-2 uk-margin-small-bottom">Kiểm tra</button>
+                    </div>
+
+                </form>
+
+            </div>
+
+            <div class="uk-grid-item-match">
+                <form class="uk-form-stacked">
+                    <div class="uk-margin">
+
+                        <div class="uk-form-controls">
+                            <label class="uk-form-label" for="form-stacked-text">Kết quả</label>
+                            <textarea id="showResult" class="uk-textarea uk-form-primary" rows="8" placeholder="Kết quả..."></textarea>
+                        </div>
+
+                    </div>
+                </form>
+            </div>
+        </div>
+
+    </div>
+
+
+    <script src="js/baitap02.js"></script>
+</body>
+
+</html>

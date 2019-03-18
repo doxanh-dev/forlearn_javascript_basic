@@ -1,0 +1,46 @@
+/* Css div dictionary */
+.dictionary{
+    border: 2px solid gray;
+    padding:  10px;
+}
+
+.dictinary-content{
+    height: 500px;
+    width: 98%;
+    margin: auto;
+}
+/* End css div dictionary */
+
+/* Css div nhập từ */
+#dic-left{
+    float: left;
+    height: 500px;
+    width: 50%;
+    text-align: center;
+}
+/* End Css div nhập từ */
+
+/* Css div hiển thị */
+#dic-right{
+    float: left;
+    height: 500px;
+    width: 50%;
+    text-align: center;
+    border: 2px solid gray;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+#showWords{
+    margin-top: 10px;
+    text-align: center;
+}
+/* End Css div hiển thị */
+
+.clear{
+    clear: both;
+}
+
+#btnKiemTra{
+    background-color: orange;
+}
