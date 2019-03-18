@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+	
+	</br>
+	
+	
+	
+	<script>
+		//BOM - Cookie trong Javascript
+		
+		//1. Cookie là gì?
+		//Cookie là dữ liệu được lưu trữ trong một file text
+		//và nằm trong máy tính nên việc lưu trữ Cookie sẽ là vĩnh viễn 
+		//hoặc là một thời gian cụ thể do bạn thiết lập.
+		//Tuy nhiên mỗi domain sẽ có một dung lượng Cookie tối đa 
+		//có thể lưu trữ được nên hãy lưu ý trường hợp dữ liệu quá lớn.
+		//Cookie được lưu trữ ở dạng name=value, ví dụ:website=freetuts.net
+		
+		
+		//2. Các thao tác với Cookie trong Javascript/
+		//Javascript có thể đọc, thêm và xóa Cookie thông qua đối tượng BOM document.cookie.
+		
+		//Tạo Cookie
+		//Ở phần Cookie là gì bạn đã biết Cookie được lưu trữ ở dạng name=value
+		//nên để tạo Cookie thì ta sử dụng chuỗi dữ liệu giống như vậy.
+		document.cookie = 'website=freetuts.net';
+		//Trường hợp bạn muốn lưu trữ nhiều Cookie thì chỉ việc tạo hai lần.
+		document.cookie = 'website=freetuts.net';
+		document.cookie = 'email=thehalfheart@gmail.com';
+		//Để thiết lập thời gian sống cho Cookie thì ta sử dụng từ khóa expires
+		//cấu trúc của chuỗi này là thời gian ở dạng UTC.
+		document.cookie="website=freetuts.net; expires=Thu, 0 Dec 2015 12:00:00 UTC";
+		//Theo mặc định thì khi bạn ở trang nào thì Cookie sẽ lưu với đường dẫn trang đó.
+		//Tuy nhiên nếu bạn muốn thay đổi đường dẫn thì sử dụng từ khóa path
+		document.cookie="website=freetuts.net; expires=Thu, 0 Dec 2015 12:00:00 UTC;path=\";
+		
+		//Lấy giá trị Cookie
+		var giatri = document.cookie;
+		
+		//Đổi giá trị cho Cookie
+		//Để thay đổi giá trị cho Cookie thì bạn chỉ việc gán lại giá trị cho cookie.
+		
+		//Xóa Cookie
+		//không có hàm xóa Cookie mà bạn phải sử dụng từ khóa expires
+		//để thiết lập thời gian sống cho Cookie là khoảng thời gian đã qua.
+		
+		
+		//3. Viết hàm xử lý Cookie trong Javascript
+		
+		//Function set Cookie
+		function setCookie(cname, cvalue, exdays)
+		{
+			var day = new Date();
+			day.setTime(day.getTime() + (exdays*24*60*60*1000));
+			var expires = "expires" + day.ToUTCString();
+			document.cookie = cname + "=" + cvalue + ";" + expires;
+			
+		}
+		
+		//Function get cookie
+		function getCookie(cname)
+		{
+			var name = cname + "";
+			var ca = document.cookie.split(';');
+			for(var index; index < ca.length; index++)
+			{
+				var c = ca[i];
+				while(c.charAt(0)==' ') c = c.subtring(1);
+				if(c.indexOf(name) == 0) return c.substring(name.length, c.length)
+			}
+			return "";
+		}
+		
+		
+		
+		//Lời kêt
+		//sử dụng Cookie trong Javascript rất thường xuyên
+		//tuy nhiên để gán và lấy giá trị Cookie thì bạn phải
+		//thông qua các giai đoạn tách chuỗi và gán chuỗi rất phức tạp
+		// Vì vậy để tiện lợi bạn hãy viết ra những hàm riêng như phần 3 mình đã trình bày.
+		//Ngoài ra có thể sử dụng các thư viện Cookie ở bên ngoài
+		
+		
+		
+	</script>
+
+</body>
+</html>

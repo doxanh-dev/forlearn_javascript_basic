@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+	
+	
+	<a href="#" onclick="return openWindow()">Open window</a>
+	</br>
+	<a href="#" onclick="return closeWindow()">Close window</a>
+	</br>
+	<a href="#" onclick="return moveWindow()">Move</a>
+	</br>
+	<script>
+		//BOM - Window trong Javascript
+		
+		
+		//1. Xác định kích thước của trình duyệt hiện tại
+		//Đối với Internet Explorer, Chrome, Firefox, Opera, và Safari thì cú pháp như sau:
+		//get height browser
+		var heightBrowser = window.innerHeight;
+		document.write(heightBrowser);
+		document.write('</br>');
+		
+		//get width browser
+		var widthBrowser = window.innerWidth;
+		document.write(widthBrowser);
+		document.write('</br>');
+		
+		//Đối với Internet Explorer các version 5,6,7,8 thì cú pháp khác
+		
+		
+		//2. Thao tác với một cửa sổ window
+		//Mở một cưa sổ với lệnh window.open()
+		//Cú pháp: window.open(url, name, options)
+		var windowChild = null;
+         
+        function openWindow()
+        {
+          windowChild = window.open('https://www.google.com/', "windowChild", "width=500, height=500");
+            return false;
+        }
+		//Đóng một cửa số với lệnh window.close()
+		// sử dụng lệnh windowObj.close()
+		function closeWindow()
+        {
+            windowChild.close()
+            return false;
+        }
+		
+		//Di chuyển cửa sổ với lệnh window.moveTo()
+		//Sau khi mở một cửa sổ nếu muốn di chuyển nó thì ta dùng lệnh windowObj.moveTo(top, left)
+		function moveWindow()
+        {
+            windowChild.moveTo(800, 400);
+            windowChild.focus();
+            return false;
+        }
+		
+		//Resize cửa sổ với lệnh window.resizeTo()
+		
+		
+	</script>
+
+</body>
+</html>

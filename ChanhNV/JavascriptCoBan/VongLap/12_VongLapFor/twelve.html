@@ -1,0 +1,46 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+	</head>
+	<body>
+		
+		<script language="javascript">
+			//Lặp với bước nhảy tăng 1 đơn vị
+			var stepOneUnit;
+			//Lặp 10 lần từ 0->9
+			//Bước nhảy stepOneUnit++ nên sau mỗi lần lặp thì tăng lên 1 đơn vị
+			for(stepOneUnit = 0; stepOneUnit < 10; stepOneUnit++)
+			{
+				document.write(stepOneUnit + '</br>');
+			}
+			
+			//lặp với bước nhảy giảm 1 đơn vị
+			for(stepOneUnit = 20; stepOneUnit > 0; stepOneUnit-- )
+			{
+				document.write(stepOneUnit + '</br>');
+			}
+			
+			//Lặp với bước nhay tăng N đơn vị
+			var stepNUnit;
+			var n = 2;
+			for(stepNUnit = 20; stepNUnit < 30; stepNUnit+=n)
+			{
+				document.write(stepNUnit + '</br>');
+			}
+			
+			
+			//Lặp với bước nhay giảm N đơn vị
+			for(stepNUnit = 40; stepNUnit > 30; stepNUnit-=n)
+			{
+				document.write(stepNUnit + '</br>');
+			}
+			
+			//Khai báo biến lặp (i) ngay trong vòng lặp: 
+			for(var i = 40; i < 50; i++)
+			{
+				document.write(i + '</br>');
+			}
+		</script>
+	</body>
+</html>

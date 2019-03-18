@@ -1,0 +1,123 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+	</head>
+	<body>
+		
+		
+		<div>
+			<div id="styleChange">
+			  Hello! Click to change style
+			</div>
+			
+			<input type="button" value="Change color" id="change_color" /> 
+			<input type="button" value="Change background" id="change_background" /> 
+			<input type="button" value="Change height" id="change_height" /> 
+			<input type="button" value="Change fontSize" id="change_fontSize" /> 
+		</div>
+		
+		<div>
+			<h3>Program Login:</h3>
+			<span>username</span><input type="text" id="username" /></br>
+			<span>password</span><input type="password" id="password" />
+			</br>
+			<div id="message">
+			</div>
+			<input type="button" value="Login" id="login" />
+			
+		</div>
+		
+		
+		<script language="javascript">
+			//Viết một chương trình gồm 4 buttons và 1 thẻ div, khi click vào từng button thì sẽ thiết lập màu sắc, background, chiều cao, font size của thẻ div.
+			//Function getElementById
+			function getEId(element)
+			{
+				return document.getElementById(element);
+			}
+			
+			
+			//Add Event change color
+			getEId("change_color").addEventListener('click', function(){
+				//document.getElementById('styleChange').style.color = 'yellow';
+				change_color();
+			});
+			//Function change color
+			function change_color()
+			{
+				document.getElementById('styleChange').style.color = 'yellow';
+			}
+			
+			
+			//Add Event change backround
+			getEId('change_background').addEventListener('click', function(){
+				change_background();
+			})
+			//Function change backround
+			function change_background()
+			{
+				document.getElementById('styleChange').style.background = 'green';
+			}
+			
+			
+			//Add Event change height
+			getEId('change_height').addEventListener('click', function(){
+				change_height();
+			})
+			//Function change height
+			function change_height()
+			{
+				document.getElementById('styleChange').style.height = '400px';
+			}
+			
+			//Add Event change fontSize
+			getEId('change_fontSize').addEventListener('click', function(){
+				change_fontSize();
+			});
+			//Function change fontSize
+			function change_fontSize()
+			{
+				document.getElementById('styleChange').style.fontSize = '30px';
+			}
+			
+			
+			//Viết chương trình đăng nhập và validate thông tin username, password. Nếu người dùng không nhập username hoặc mật khẩu thì hiển thị thông báo message trong một thẻ div và chữ màu đỏ, ngược lại thì thông báo validate thành công và chữ màu xanh
+			
+			//Function validate form input Login
+			document.getElementById('login').addEventListener('click', function(){
+				validate();
+			});
+			
+			
+			function validate()
+			{
+				var username = document.getElementById('username').value;
+				var password = document.getElementById('password').value;
+				var message = document.getElementById('message');
+				
+				if(username == "")
+				{
+					message.innerHTML = "Please fill username!";
+					message.style.color = "red";
+				}
+				else if(password == "")
+				{
+						message.innerHTML = "Please fill password!";
+						message.style.color = "red";
+				}
+				else
+				{
+					message.innerHTML = "Congraluted! Vlidate success";
+					message.style.color = 'green';
+				}
+				
+			}
+			
+			
+				
+			
+		</script>
+		
+  </body>
+</html>

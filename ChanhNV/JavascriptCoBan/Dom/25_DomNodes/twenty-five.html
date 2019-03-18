@@ -1,0 +1,78 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+	</head>
+	<body>
+		
+		
+		<div>
+			
+		</div>
+		
+		<div>
+		
+			
+		</div>
+		
+		<div id="TOP">
+            Xin chào các bạn!  
+        </div>
+       
+        <input type="button" value="Append" id="btn-append"/>
+		
+		
+		<script language="javascript">
+			
+			var node = document.getElementById("some-id");
+				
+			var p = document.createElement("p");
+			
+			p.innerHTML = "Học DOM Nodes tại freetuts.net";
+			
+			document.getElementsByTagName('body')[0].appendChild(p);
+			
+			
+			 // Tạo mới một thẻ p
+          var p = document.createElement("p");
+           
+          // Thêm nội dung HTML vào thẻ p
+          p.innerHTML = "Học DOM Nodes tại freetuts.net"
+           
+          // Đưa thẻ P vào trong thẻ body
+          document.getElementsByTagName('body')[0].appendChild(p);
+		  
+		  
+		  
+		  // Tạo mới một thẻ p
+          var p = document.createElement("p");
+           
+          // Tạo text node
+          var text = document.createTextNode("Học DOM Nodes tại freetuts.net");
+           
+          // Thêm nội dung HTML vào thẻ p
+          p.appendChild(text);
+           
+          // Đưa thẻ P vào trong thẻ body
+          document.getElementsByTagName('body')[0].appendChild(p);
+		  
+		  
+		   // Lấy button
+          var button = document.getElementById("btn-append");
+           
+          // Thêm sự kiện click cho button
+          button.addEventListener("click", function(){
+            // Tạo mới một thẻ h1
+            var h1 = document.createElement("h1");
+ 
+            // Thêm nội dung HTML vào thẻ h1
+            h1.innerHTML = "Học DOM Nodes tại freetuts.net"
+ 
+            // Đưa thẻ h1 vào trong thẻ div có id=TOP
+            document.getElementById('TOP').appendChild(h1);
+          });
+
+		</script>
+		
+  </body>
+</html>

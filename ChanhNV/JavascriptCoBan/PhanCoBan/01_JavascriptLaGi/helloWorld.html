@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+</head>
+
+<body>
+	<input type="button" id="clickme" value="Click Me" />
+
+	<input type="button" id="mouseover" value="MouseOver Me">
+
+	<script language="javascript">
+		alert(1);
+
+		alert(2);
+
+		window.onload = function () {
+			alert(3);
+		};
+
+		alert(4);
+
+		//lấy element có id=clickme lưu vào biến button
+		var button = document.getElementById('clickme');
+
+		//khi click vào element chứa trong button thì thực hiện một function,
+		//bên trong function thông báo lên Hello World!
+		button.addEventListener('click', function () {
+			alert('Hello World!');
+		});
+
+		//Lấy element có id=mouseover lưu vào biến buttonMouse
+		var buttonMouse = document.getElementById('mouseover');
+		//Khi click vào element chứa trong buttonMouse thực hiện 1 function
+		buttonMouse.addEventListener('mouseover', function () {
+			alert('MouseOver World!');
+		})
+
+	</script>
+
+
+
+</body>
+
+</html>

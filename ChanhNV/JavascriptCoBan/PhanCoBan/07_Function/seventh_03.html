@@ -1,0 +1,75 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+	</head>
+	<body>
+		<!-- <input type="button" onclick="alert('Hello Saishunkan')" value ="Clickme" /> -->
+		<!-- </br> -->
+		
+		<script language="javascript">
+			//Function check a Year
+			function check_YearNoReturn(year)
+			{
+				//Năm nhuận là năm chia hết cho 4
+				//Nếu chia hết cho 100 thì phải chia hết cho 400
+				if(year % 4 == 0)
+				{
+					alert(year + ' là năm nhuận!');
+				}
+				else if(year % 100 == 0)
+				{
+					if(year % 400 == 0)
+					{
+						alert(year + ' là năm nhuận!');
+					}
+					else
+					{
+						alert(year + ' không phải năm nhuận!')
+					}
+				}
+				else 
+				{
+					alert(year + ' không phải năm nhuận!')
+				}
+				
+			}
+			check_YearNoReturn(100);
+			check_YearNoReturn(101);
+			check_YearNoReturn(102);
+			check_YearNoReturn(103);
+			check_YearNoReturn(104);
+			
+			function check_YearHaveReturn(year)
+			{
+				if(year % 4 == 0)
+				{
+					return true;
+				}
+				else if(year % 100 == 0)
+				{
+					if(year % 400 == 0)
+					{
+						return true;
+					}
+				}
+				else
+				{
+					return false;
+				}
+			}
+			
+			var flag = check_YearHaveReturn(105);
+			if(flag)
+			{
+				alert('là năm nhuận!')
+			}
+			else
+			{
+				alert('không là năm nhuận')
+			}
+			
+			
+		</script>
+	</body>
+</html>

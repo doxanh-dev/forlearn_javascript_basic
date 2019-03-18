@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+	
+	
+	
+	
+	<script>
+		//BOM - History trong Javascript
+		
+		
+		//1. History trong Javascript
+		//cũng là một thành phần con của window 
+		// phải thông qua đối tượng window để thao tác với history.
+		//Đếm tổng số trang đã lưu trong history
+		var totalPage = window.history.length;
+		alert("Tổng số trang đã lưu trong history là: " + window.history.length);
+		
+		//Đi tới một trang nào đó trong history
+		//history.back() : trở lại trang trước
+		//history.forward() : đi tới trang kế tiếp
+		//history.go(number): đi tới một trang:
+		//nếu number âm thì tính từ trang hiện tại trừ đi number
+		//nếu number dương thì tính từ trang hiện tại cộng với number
+		
+		// trở lại trang trước
+		window.history.back();
+		 
+		// đi tới trang kế tiếp sau khi sử dụng back()
+		window.history.forward()
+		 
+		// đi tới trang cách đây 5 lần lướt web
+		window.history.go(-5);
+		
+		//có thể liệt kê nó vào danh sách những đối tượng ít sử dụng trong javascript. /
+		
+	</script>
+
+</body>
+</html>

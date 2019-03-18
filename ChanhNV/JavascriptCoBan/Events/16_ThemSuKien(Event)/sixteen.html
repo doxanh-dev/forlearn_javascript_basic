@@ -1,0 +1,57 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+	</head>
+	<body>
+		<div>
+			<h3>Add event for a tag in javascript</h3>
+			<input type="button" class="show_btn2" id="show_btn" value="Click me" ></input>
+			</br>
+		</div>
+		
+		<div>
+			<h3>Add event for more tag in javascript</h3>
+			<ul>
+				<li><a href="#" class="show" > Tin công nghệ</a></li>
+				<li><a href="#"> Tin trong nước</a></li>
+				<a href="#" class="show" > Tin công nghệ</a>
+			</ul>
+		</div>
+		
+		<script language="javascript">
+			//Add event for a tag in javascript
+			//Get button have id=show_btn
+			var show_btn = document.getElementById('show_btn');
+			//var show_btn = document.getElementsByClassName("show_btn2");dùng class dom ko đc
+			//Add event for Object
+			show_btn.onclick = function()
+			{
+				alert('You onclick button have id="show_btn"');
+			};
+			show_btn.onmouseleave = function()
+			{
+				alert('You onmouseleave button have id="show_btn"');
+			}
+			
+			
+			
+			//Add event for more tag in javascript
+			//Get Object
+			var a_list = document.getElementsByClassName("show");
+			
+			//Repeat and add event
+			for(var index = 0; index < a_list.length; index++)
+			{
+				a_list[index].onclick = function()
+				{
+					alert('Hello! you clicked me!');
+					// return false to not reload page
+					return false;
+				};
+			};
+			
+			
+		</script>
+	</body>
+</html>

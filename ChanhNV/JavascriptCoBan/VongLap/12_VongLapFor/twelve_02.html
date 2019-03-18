@@ -1,0 +1,34 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+	</head>
+	<body>
+		
+		<script language="javascript">
+			//Vòng lặp lồng nhau: ma trận 3x3
+			for(var row = 1; row < 4; row ++)
+			{
+				for(var col= 1; col < 4; col++)
+				{
+					document.write(col);
+				}
+				//xuống hàng
+				document.write('</br>');
+			}
+			
+			
+			//Viết chương trình in ra một ma trận 10x10
+			for(var row = 0; row <= 9; row++)
+			{
+				for(var col = 0; col <= 9; col++)
+				{
+					//in ra vị trí của cột
+					document.write("([" + row + "][" + col + "])");
+				}
+				//Xuống hàng
+				document.write("</br>");
+			}
+		</script>
+	</body>
+</html>

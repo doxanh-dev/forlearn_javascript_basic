@@ -1,0 +1,48 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+	</head>
+	<body>
+		<!-- <input type="button" onclick="alert('Hello Saishunkan')" value ="Clickme" /> -->
+		<!-- </br> -->
+		
+		<script language="javascript">
+			//Get value from User
+			var number = parseInt(prompt('Please Fill a  number: '));
+			var mod = (number % 2);
+			
+			//Kiem tra chẵn lẻ
+			switch (mod)
+			{
+				case 0:
+				{
+					document.write(number + ' là số chẵn </br>');
+					break;
+				}
+				case 1:
+				{
+					document.write(number + ' là số lẻ </br>');
+					break;
+				}
+				default:
+				{
+					document.write(number + ' bạn nhập không phải số!!! ');
+					break;
+				}
+			}
+			
+			
+			//Kiểm tra màu
+			var color = prompt("Nhập màu cần kiểm tra");
+ 
+			switch (color){
+				case 'red' : 
+					document.write("Bạn nhập màu đỏ, đúng rồi đó");
+				case 'yellow' : 
+					document.write("Bạn nhập màu vàng, đúng rồi đó");
+			}
+			
+		</script>
+	</body>
+</html>

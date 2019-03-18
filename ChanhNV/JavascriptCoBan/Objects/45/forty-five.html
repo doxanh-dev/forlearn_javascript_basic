@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+	
+	
+	
+    
+    
+
+	<script type="text/javascript">
+		//1. Prototypes trong Javascript
+		//Thêm một hàm plus() cồng dồn vào giá trị hiện tại của đối tượng Number
+		//Create a object
+		Number.prototype.plus = function(value)
+		{
+			return this.valueOf() + parseInt(value);
+		};
+
+		//Create new object
+		var age = Number(12);
+		document.write(age.plus(12) + "</br>");
+		
+
+		//Create another object
+		var year = 2018;
+		document.write(year.plus(12));
+		document.write("</br>")
+		//=>Trong ví dụ này bạn thấy mình sử dụng hai cách để tạo đối tượng Number và cả hai đều sử dụng được hàm plus().
+
+
+		//2. Tạo mới Object và thao tác với Prototype
+		function Product()
+		{
+			//properties
+			this.id = "";
+			this.name = "";
+			this.price = "";
+
+			//Method
+			this.showInfo = function(){
+				document.write("Id: " + this.id + "|" + this.name + "|" + this.price +  "</br>");
+				// document.write("name: " + this.name + "</br>");
+				// document.write("price: " + this.price + "</br>");
+			}
+		}
+
+		//Lúc này muốn tạo mới đối tượng và sử dụng các thuộc tính, phương thức thì ta làm như sau.
+		//Create
+		var coca = new Product();
+
+		//Get properties
+		for(var i = 0; i <= 5; i++)
+		{
+			coca.id = "0" + i;
+			coca.name = "coca" + i;
+			coca.price = "1000" + i;
+			coca.showInfo();
+		}
+		// coca.id = "1";
+		// coca.name = "Coca 1";
+		// coca.price = "1000";
+		
+		//Thêm thuộc tính và phương thức vào Prototype
+		//Bổ sung thuộc tính company và phương thức showCompany vào đối tượng Person.
+		
+		//Create object
+		function Worker()
+		{
+			//Properties
+			//...
+
+			//Method
+			//...
+		}
+
+		//Add information
+		Worker.prototype.company = "";
+		Worker.prototype.showCompany = function(){
+			document.write(this.company);
+		};
+
+		//Use
+		var Hoang = new Worker();
+		Hoang.company = "Sam Sung";
+		Hoang.showCompany();
+		
+		//Prototype có vai trò rất quan trọng trong việc quản lý
+		// các phương thức và thuộc tính của đối tượng,
+		// chính vì vậy thông thường những bạn chỉ code ở mức độ đơn giản
+		// thì rất khi khi sử dụng, còn những bạn muốn code nâng cao thì chắc chắn phải biết đến đối tượng Prototype này.
+	</script>
+</body>
+</html>

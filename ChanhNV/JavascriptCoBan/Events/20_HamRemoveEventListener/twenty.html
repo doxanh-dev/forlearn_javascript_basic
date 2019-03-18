@@ -1,0 +1,47 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+	</head>
+	<body>
+		<div>
+			<div id="numbersRandom">
+			
+			</div>
+			<input type="button" id="stopRandom" value="Stop Random" />
+		</div>
+	
+		
+		<div>
+			
+		</div>
+	
+		
+	
+	
+	
+		<script language="javascript">
+			//01: Get objects
+			var numbersRandom = document.getElementById('numbersRandom');
+			var stopRandom = document.getElementById('stopRandom');
+			var html = document.getElementsByTagName('html')[0];
+			
+			//02: Define action show numbers random
+			function do_random()
+			{
+				var randomString = Math.random();
+				numbersRandom.innerHTML = randomString;
+			}
+			
+			//03: Add action do_random for event mousemove tag <html>
+			html.addEventListener('click', do_random);
+			
+			//04: Add event Click for button have id=stopRandom
+			stopRandom.addEventListener('click', function(){
+				// delete action do_random in event mousemove
+				html.removeEventListener('mousemove', do_random);
+			})
+			
+		</script>
+	</body>
+</html>

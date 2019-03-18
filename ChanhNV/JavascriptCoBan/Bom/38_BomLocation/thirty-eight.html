@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+	<h1>Saishunkan</h1>
+	<button onclick="refreshPage()">Refresh</button>
+	</br>
+	<button onclick="hrefPage()">location.href</button>
+	</br>
+	<button onclick="assignPage()">assignPage()</button>
+	</br>
+	
+	
+	
+	<script>
+		//BOM - Location điều hướng và xử lý URL trong Javascript
+		// chuyên dùng xử lý URL của trang web 
+		//và thực hiện các thao tác liên quan tới URL như reload, redirect, ...
+		
+		//1. Location trong Javascript
+		
+		//Các phương thức của Location
+		//ba phương thức chính nằm trong đối tượng location đó
+		//là reload(), replace() và assign().
+		
+		//window.location.reload(url) - tải lại trang web
+		function refreshPage()
+        {
+            window.location.reload(); 
+        }
+		
+		//window.location.replace(urr) - ghi đè trang web
+		//Phương thức này ít khi sử dụng mà thay vào đó họ sử dụng cú pháp window.location.href="url". 
+		//Đối với replace() thì trình duyệt sẽ KHÔNG đưa vào lịch sử.
+		//Đối với location.href thì trình duyệt sẽ CÓ đưa vào lịch sử 
+		function replacePage()
+        {
+          window.location.replace('google.com'); 
+        }
+		function hrefPage()
+        {
+          window.location.href = 'https://freetuts.net';
+        }
+		
+		//window.location.assign(url) - load một trang mới
+		function assignPage()
+        {
+          window.location.assign('https://freetuts.net'); 
+        }
+		
+		
+		//3. Các thuộc tính của Location
+		//hash: thiết lập hoặc lấy phần sau dấu # của URL
+		//host: thiết lập hoặc lấy hostname và port number của URL
+		//hostname: thiết lập hoặc lấy hostname
+		//href: thiết lập hoặc lấy URL
+		//origin: trả về protocal, hostname và port number của URL
+		//pathname: thiết lập hoặc lấy path name của URL
+		//port: thiết lập hoặc lấy port của URL
+		//search: lấy phần query string của URL
+		document.write("hash:" +window.location.hash + "<br/>");
+        document.write("host:" +window.location.host + "<br/>");
+        document.write("hostname:" +window.location.hostname + "<br/>");
+        document.write("href:" +window.location.href + "<br/>");
+        document.write("origin:" +window.location.origin + "<br/>");
+        document.write("pathname:" +window.location.pathname + "<br/>");
+        document.write("port:" +window.location.port + "<br/>");
+        document.write("search:" +window.location.search + "<br/>");
+		
+		//chỉ hay sử dụng phần hash, search và href,
+		
+	</script>
+
+</body>
+</html>

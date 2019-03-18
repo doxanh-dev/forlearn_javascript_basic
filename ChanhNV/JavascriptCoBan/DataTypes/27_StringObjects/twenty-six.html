@@ -1,0 +1,32 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+	</head>
+	<body>
+		
+		
+		
+		
+		
+		<script language="javascript">
+			
+			// Lấy đối tượng
+			var button = document.getElementById('btn');
+			 
+			// Gán sự kiện
+			button.addEventListener("click", function(){
+			// Lấy thuộc tính type của đối tượng đang xử lý
+			// chính là button có id="btn"
+				alert(this.type);
+			});
+			
+			function show_type(obj)
+			{
+				alert(obj.type);
+			}
+			
+		</script>
+		
+  </body>
+</html>

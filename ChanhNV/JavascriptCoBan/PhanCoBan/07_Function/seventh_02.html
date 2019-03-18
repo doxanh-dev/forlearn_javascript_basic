@@ -1,0 +1,25 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+	</head>
+	<body>
+		<!-- <input type="button" onclick="alert('Hello Saishunkan')" value ="Clickme" /> -->
+		<!-- </br> -->
+		
+		<script language="javascript">
+			function showMessage(message)
+			{
+				//Nếu message không được truyền vào hoặc giá trị nó là rỗng
+				//thì sẽ được thay thế bằng giá trị 'No Message'
+				
+				message = message || 'No Message </br>';
+				document.write(message);
+			}
+			//Method 01: no parameters
+			showMessage();
+			//Methoad 02: Have parameters
+			showMessage('Welcome to Saishunkan!');
+		</script>
+	</body>
+</html>
