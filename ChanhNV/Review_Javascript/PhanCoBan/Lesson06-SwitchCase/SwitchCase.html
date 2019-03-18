@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Switch case- check even odd number</title>
+</head>
+<body>
+    <h2>Switch case - Check Even Odd</h2>
+    <input id="checkEvenOdd" type="button" value="Click to check even odd">
+
+    <script type="text/javascript">
+        checkEvenOdd('checkEvenOdd');
+
+
+        //function check even odd using switch-case
+        function checkEvenOdd(id)
+        {
+            var checkEvenOdd = document.getElementById(id);
+            checkEvenOdd.addEventListener('click', function(){
+                var numberCheck = parseInt(prompt('Please enter number'));
+                var mod = numberCheck % 2;
+
+                switch (mod)
+                {
+                    case 0: {
+                        alert(numberCheck + ' is even number!');
+                        break;
+                    }
+                    case 1: {
+                        alert(numberCheck + ' is odd number!');
+                        break;
+                    }
+                    default : {
+                        alert('You enter is not number!!!');
+                    }
+                }
+
+            });
+        }
+    </script>
+</body>
+</html>

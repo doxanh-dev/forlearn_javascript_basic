@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Function Basic</title>
+</head>
+<body>
+    <input type="button" id="btnAlert" value="Click to show message">
+
+    <input type="button" value="Show confirm" id="btnConfirm">
+
+    <script type="text/javascript">
+        //Click a button to show alert
+        function showMessage(id)
+        {
+            var button = document.getElementById(id);
+            button.addEventListener('click', function(){
+                alert('function alert');
+            });
+            //alert('Hello!!!');
+        }
+        //Click a button to show confirm
+        function showMessageConfirm(id)
+        {
+            var button = document.getElementById(id);
+            button.addEventListener('click', function(){
+                confirm('You clicked' + id);
+            });
+            //alert('Hello!!!');
+        }
+        showMessage('btnAlert');
+        showMessageConfirm('btnConfirm');
+    </script>
+</body>
+</html>

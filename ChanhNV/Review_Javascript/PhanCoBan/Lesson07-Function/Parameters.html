@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Var Global - Var Private</title>
+</head>
+<body>
+    
+    
+    <script type="text/javascript">
+        
+        //function show message
+        function showMessage(message)
+        {
+            //If don't have value, message will have value: "don't have message"
+            message = message || ' dont\'t have message! '
+            document.write(message + '</br>');
+
+        }
+        showMessage();
+        showMessage('Welcome to shaisunkan!')
+    </script>
+</body>
+</html>
