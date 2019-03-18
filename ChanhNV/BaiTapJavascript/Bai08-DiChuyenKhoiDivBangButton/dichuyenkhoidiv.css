@@ -1,0 +1,21 @@
+/* Css tiêu đề */
+.title{
+    margin-top:2px;
+}
+
+/* Css khối div di chuyển */
+.card{
+    width: 400px;
+    height: 200px;
+    border: 2px solid green;
+    display: flex;
+    align-items: center;
+    transition: 1s;
+    justify-content: center;
+}
+
+/*css của khối div khi click vào button*/
+.move{
+    transform: translateX(400px);
+                transition: 1s;
+}

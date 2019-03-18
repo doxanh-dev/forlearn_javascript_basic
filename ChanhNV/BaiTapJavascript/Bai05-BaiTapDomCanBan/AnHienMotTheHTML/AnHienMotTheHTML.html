@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Ẩn hiển một thẻ HTML</title>
+    <!-- Link css -->
+    <link rel="stylesheet" href="./anhienmotthehtml.css">
+</head>
+<body>
+    <h2>Chương trình ẩn hiện một thẻ HTML</h2>
+    <br>
+    <br>
+    <h2>Tìm kiếm khóa học</h2>
+    <table border="1" cellspacing="0" cellpadding="5">
+        <tr>
+            <td>Nhập từ khóa</td>
+            <td>
+                <input type="text" id="title" value=""/> <br/>
+                <a href="#" onclick="return TimKiemNangCao('TimKiemNangCao','Category');" id="TimKiemNangCao">Tìm kiếm nâng cao</a>
+            </td>
+        </tr>
+        <tr id="Category">
+            <td>Chọn khóa học</td>
+            <td>
+                <select id="category">
+                    <option value="1">Javascript</option>
+                    <option value="2">ASP.net</option>
+                    <option value="2">Java</option>
+                    <option value="2">Reactjs</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>
+                <input type="button" id="btn_search" value="Tìm kiếm"/>
+            </td>
+        </tr>
+    </table>
+
+
+    <script src="./anhienmotthehtml.js"></script>
+</body>
+</html>

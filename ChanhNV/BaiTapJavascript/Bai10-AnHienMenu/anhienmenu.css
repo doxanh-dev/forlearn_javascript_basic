@@ -1,0 +1,42 @@
+/* Css menu */
+div.menu{
+    background-color:  #4267B2;
+    position: relative;
+    height: 40px;
+}
+
+/* Css menuIcon */
+div.menuIcon{
+    float:right;
+    position: absolute;
+    right: 10rem;
+}
+
+/* Css icon */
+i.fas{
+    cursor: pointer;
+    margin-top: 0.7rem;
+}
+
+
+/*Css menuContent ban đầu xuất hiện */
+/* Ban đầu sẽ ẩn đi */
+div.menuContent{
+    margin-top: 2.5rem;
+    margin-right: 7rem;
+    float: right;
+    box-shadow:1px 1px 1px;
+    display: none;
+  }
+
+/* Css danh sách menu li */
+div.menuContent ul li{
+    list-style-type: none;
+    padding: 0.5rem;
+}
+
+/* Css danh sách menu li  trên cùng thì có border*/
+li.top{
+    border-top:1px solid gray;
+}
+   
