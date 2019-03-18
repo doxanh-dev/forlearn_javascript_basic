@@ -1,0 +1,139 @@
+<html>
+
+<head>
+    <title>Validate du lieu su dung Regex</title>
+</head>
+
+<body>
+    <form>
+        <table>
+            <tr style="text-align: center">
+                <td colspan="2">
+                    <h3>Form điền thông tin</h3>
+                </td>
+            </tr>
+            <tr>
+                <td>Ho ten</td>
+                <td>
+                    <input type="text" id="hoTen" name="hoTen" />
+                </td>
+            </tr>
+            <tr>
+                <td>SDT</td>
+                <td>
+                    <input type="text" id="sdt" name="sdt" />
+                </td>
+            </tr>
+            <tr>
+                <td>Email</td>
+                <td>
+                    <input type="text" id="email" name="email" />
+                </td>
+            </tr>
+            <tr>
+                <td>Địa chỉ FB</td>
+                <td>
+                    <input type="text" id="diaChiFB" name="diaChiFB" />
+                </td>
+            </tr>
+            <tr style="text-align: center">
+                <td colspan="2">
+                    <input type="button" id="btn-button" value="Submit" />
+                </td>
+            </tr>
+        </table>
+    </form>
+
+    <script>
+        var button = document.getElementById("btn-button");
+
+        button.addEventListener("click", function () {
+            var hoTen = document.getElementById("hoTen");
+            var sdt = document.getElementById("sdt");
+            var email = document.getElementById("email");
+            var diaChiFB = document.getElementById("diaChiFB");
+
+            if (hoTen.value == "") {
+                alert("Ho ten khong duoc bo trong");
+                hoTen.focus();
+                return;
+            }
+            else if (hoTen.value.length < 6) {
+                alert("Ho ten phai tu 6 ky tu tro len");
+                hoTen.focus();
+                return;
+            }
+
+            if (sdt.value == "") {
+                alert("So dien thoai khong duoc bo trong");
+                sdt.focus();
+                return;
+            }
+            else if (!validatePhone(sdt.value)) {
+                alert("So dien thoai nhap khong dung");
+                sdt.focus();
+                return;
+            }
+
+            if (email.value == "") {
+                alert("Email khong duoc bo trong");
+                email.focus();
+                return;
+            }
+            else if (!validateEmail(email.value)) {
+                alert("Email nhap khong dung dinh dang");
+                email.focus();
+                return;
+            }
+
+            if (diaChiFB.value == "") {
+                alert("Dia chi fb khong duoc bo trong");
+                diaChiFB.focus();
+                return;
+            }
+            else if (!validateUrlFB(diaChiFB.value)) {
+                alert("Dia chi fb nhap khong dung dinh dang");
+                diaChiFB.focus();
+                return;
+            }
+
+            alert("<b>Thong tin dang dky chinh xac</b> \nHo ten: " + hoTen.value + "\nDien thoai: " + sdt.value + "\nEmail: " + email.value + "\nDia chi FB: " + diaChiFB.value);
+            hoTen.value = "";
+            sdt.value = "";
+            email.value = "";
+            diaChiFB.value = "";
+        });
+
+        //validate phone
+        function validatePhone(phoneNumber) {
+            var regExp = /^[\s()+-]*([0-9][\s()+-]*){6,12}$/;
+            var phone = phoneNumber.match(regExp);
+            if (phone) {
+                return true;
+            }
+            return false;
+        }
+
+        //validate Email
+        function validateEmail(email) {
+            var regExp = /^[a-z][a-z0-9_\.]{5,32}@[a-z0-9]{2,}(\.[a-z0-9]{2,4}){1,2}$/;
+            var email = email.match(regExp);
+            if (email) {
+                return true;
+            }
+            return false;
+        }
+
+        //validate diachiFB
+        function validateUrlFB(urlFB) {
+            var regExp = /^((https?|ftp|smtp):\/\/)?(www.)?[a-z0-9]+\.[a-z]+(\/[a-zA-Z0-9#]+\/?)*$/;
+            var urlFB = urlFB.match(regExp);
+            if (urlFB) {
+                return true;
+            }
+            return false;
+        }
+    </script>
+</body>
+
+</html>

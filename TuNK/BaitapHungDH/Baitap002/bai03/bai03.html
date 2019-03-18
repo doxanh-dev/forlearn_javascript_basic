@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Bai03</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.25/css/uikit.min.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.25/js/uikit.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.25/js/uikit-icons.min.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="style.css" />
+</head>
+
+<body>
+    <div class="uk-container">
+        <fieldset class="uk-width-2-3 uk-margin-auto">
+            <div uk-grid>
+                <div class="uk-width-2-3 uk-margin-auto">
+                    <label class="uk-width-1-1"><b>In dãy số</b></label>
+                    <input type="text" id="textInput" class="mr-10px uk-width-1-1 uk-input test" placeholder="Nhập số nguyên" />
+                    <button type="button" id="button" class="mr-10px uk-button uk-button-primary uk-float-right">In dãy số</button>
+                </div>
+                <div id="content" class="uk-width-2-3 uk-margin-auto">
+                    <label class="uk-width-1-1"><b id="title"></b></label>
+                    <input type="text" id="result" class="mr-10px uk-width-1-1 uk-input" placeholder="Kết quả" />
+                </div>
+            </div>
+        </fieldset>
+    </div>
+
+    <script>
+        // Nhập vào 1 số nguyên, in ra dãy số chẵn từ 2 cho đến số nhập vào, tính tích của dãy số này.
+        var tich = 1;
+        var button = document.getElementById("button");
+
+        button.addEventListener("click", function () {
+            var number = document.getElementById("textInput");
+
+            if (number.value == "") {
+                UIkit.modal.alert("Vui lòng nhập số nguyên!").then(function () {
+                    number.focus();
+                });
+            }
+            else if (isNaN(number.value)) {
+                UIkit.modal.alert("Vui lòng nhập vào input là số nguyên!").then(function () {
+                    number.focus();
+                });
+            }
+            else if (parseInt(number.value) < 2) {
+                UIkit.modal.alert("Vui lòng nhập số nguyên lớn hơn hoặc bằng 2").then(function () {
+                    number.focus();
+                });
+            }
+            else {
+                var result = InDaySo(parseInt(number.value));
+
+                if (result != "") {
+                    document.getElementById("content").style.display = "block";
+                    document.getElementById("title").innerHTML = "Dãy số chẵn được hiển thị từ 2 đến " + number.value;
+                    document.getElementById("result").value = result;
+                    UIkit.modal.alert("Tích của dãy số từ 2 đến " + number.value + " là: <b>" + tich + "</b>").then(function () {
+                        number.value = "";
+                        number.focus();
+                        tich = 1;
+                    });
+
+                }
+                else {
+                    UIkit.modal.alert("Không có dãy số nào thỏa mãn từ 2 đến <b>" + number.value + "</b>").then(function () {
+                        number.focus();
+                    });
+                }
+            }
+        });
+
+        //ham in day so từ 2 đến số được nhập vào
+        function InDaySo(num) {
+            var result = '';
+
+            for (var i = 2; i <= num; i++) {
+                if (i % 2 == 0) {
+                    result += i + ' - ';
+                    tich *= i;
+                }
+            }
+
+            //cat ky tu "-" va khoang trang o cuoi chuoi result
+            result = result.substring(0, result.length - 3);
+
+            return result;
+        }
+    </script>
+</body>
+
+</html>

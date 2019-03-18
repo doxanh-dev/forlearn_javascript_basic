@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Baitap006</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.25/css/uikit.min.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.25/js/uikit.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.25/js/uikit-icons.min.js"></script>
+
+    <link href="style.css" rel="stylesheet">
+    <script src="xuly.js"></script>
+</head>
+<body>
+    <div class="uk-container">
+        <h2 class="uk-width-1-1 uk-text-center">Máy tính bỏ túi</h2>
+        <fieldset class="uk-margin-auto uk-width-1-4@l uk-width-1-3@m uk-width-1-2@s uk-width-3-4">
+            <input class="uk-input" id="result" type="text" placeholder="" value="0" readonly>
+            <div class="uk-width-1-1 uk-child-width-expand@s uk-text-center ml-0" uk-grid>
+                <div class="uk-button uk-width-1-4" onClick="ClickSelect(this)" id="color-CE">CE</div>
+                <div class="uk-button uk-width-1-4" onClick="ClickSelect(this)">/</div>
+                <div class="uk-button uk-width-1-4" onClick="ClickSelect(this)">*</div>
+                <div class="uk-button uk-width-1-4" onClick="ClickSelect(this)">DEL</div>
+            </div>
+            <div class="uk-width-1-1 uk-child-width-expand@s uk-text-center ml-0" uk-grid>
+                <div class="uk-button uk-width-1-4 color-text" onClick="ClickSelect(this)">7</div>
+                <div class="uk-button uk-width-1-4 color-text" onClick="ClickSelect(this)">8</div>
+                <div class="uk-button uk-width-1-4 color-text" onClick="ClickSelect(this)">9</div>
+                <div class="uk-button uk-width-1-4" onClick="ClickSelect(this)">-</div>
+            </div>
+            <div class="uk-width-1-1 uk-child-width-expand@s uk-text-center ml-0" uk-grid>
+                <div class="uk-button uk-width-1-4 color-text" onClick="ClickSelect(this)">4</div>
+                <div class="uk-button uk-width-1-4 color-text" onClick="ClickSelect(this)">5</div>
+                <div class="uk-button uk-width-1-4 color-text" onClick="ClickSelect(this)">6</div>
+                <div class="uk-button uk-width-1-4" onClick="ClickSelect(this)">+</div>
+            </div>
+            <div class="uk-width-1-1 uk-child-width-expand@s uk-text-center ml-0" uk-grid>
+                <div class="uk-button uk-width-1-4 color-text" onClick="ClickSelect(this)">1</div>
+                <div class="uk-button uk-width-1-4 color-text" onClick="ClickSelect(this)">2</div>
+                <div class="uk-button uk-width-1-4 color-text" onClick="ClickSelect(this)">3</div>
+                <div class="uk-button uk-width-1-4" onClick="ClickSelect(this)">Ans</div>
+            </div>
+            <div class="uk-width-1-1 uk-child-width-expand@s uk-text-center ml-0" uk-grid>
+                <div class="uk-button uk-width-1-4 color-text" onClick="ClickSelect(this)">0</div>
+                <div class="uk-button uk-width-1-4 color-text" onClick="ClickSelect(this)">.</div>
+                <div class="uk-button uk-width-1-4 color-text" onClick="ClickSelect(this)">+/-</div>
+                <div class="uk-button uk-width-1-4" onClick="ClickSelect(this)" id="color-result">=</div>
+            </div>
+        </fieldset>
+    </div>
+</body>
+</html>

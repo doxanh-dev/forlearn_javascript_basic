@@ -1,0 +1,37 @@
+<html>
+
+<head>
+    <title>Thêm thẻ HTML</title>
+</head>
+
+<body>
+    <h1>Thêm thẻ HTML</h1>
+
+    <input type="text" id="title" value="" />
+    <input type="button" id="button_add" value="Add" onclick="add_element()"/>
+
+    <div id="result"></div>
+
+    <script>
+        function add_element(){
+            var title = document.getElementById("title");
+            if(title.value == ""){
+                alert("Tieu de chua duoc nhap");
+                title.focus();
+                return;
+            }
+            else{
+                console.log("hello");
+                var h1 = document.createElement("div");
+                console.log("h1"+h1);
+
+                // Thêm nội dung HTML vào thẻ h1
+                 h1 = title.value;
+                document.getElementById("result").appendChild(h1);
+            }
+        }
+
+    </script>
+</body>
+
+</html>
