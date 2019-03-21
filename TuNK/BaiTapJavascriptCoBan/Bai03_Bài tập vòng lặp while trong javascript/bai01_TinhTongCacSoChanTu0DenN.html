@@ -1,0 +1,41 @@
+<html>
+
+<head>
+    <title>Tính tổng các số chẵn từ 0 tới n bằng cách sử dụng vòng lặp while</title>
+</head>
+
+<body>
+    <input type="text" id="input" />
+    <button type="button" onclick="tinhTong()">Tinh tong</button>
+    <div id="ketqua"></div>
+
+    <script>
+        function tinhTong() {
+            var input = document.getElementById("input");
+
+            if (input.value == "") {
+                alert("Ban chua nhap so");
+                input.focus();
+                return;
+            }
+            else {
+                input = parseInt(input.value);
+
+                var tong = 0;
+                var i = 0;
+                while (i <= input) {
+                    if (i % 2 == 0) {
+                        tong += i;
+                    }
+
+                    i++;
+                }
+                
+                document.getElementById("ketqua").innerHTML = "Tong cua cac so chan tu 0 den " + input + " la: " + tong;
+            }
+
+        }
+    </script>
+</body>
+
+</html>

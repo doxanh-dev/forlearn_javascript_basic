@@ -1,0 +1,114 @@
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>Tính số ngày trong tháng</title>
+        <script language="javascript">
+            function tinhSoNgay() {
+                //lấy giá trị tháng , năm
+                var thang = document.getElementById("txtThang").value;
+                var nam = document.getElementById("txtNam").value;
+                if (isNaN(thang) == true) {
+                    alert("Tháng phải là sô !!!");
+                    document.getElementById("txtThang").focus();
+                    return;
+                }
+                if (isNaN(nam) == true) {
+                    alert("Năm phải là sô !!!");
+                    document.getElementById("txtNam").focus();
+                    return;
+                }
+                var kl = '';
+                var ngay = 0;
+                switch (parseInt(thang)) {
+                    case 1:
+                    case 3:
+                    case 5:
+                    case 7:
+                    case 8:
+                    case 10:
+                    case 12: ngay = 31;
+                        break;
+                    case 4:
+                    case 6:
+                    case 9:
+                    case 11: ngay = 30;
+                        break;
+                }
+                if (thang == 2) {
+                    if (nam % 400 == 0 || (nam % 4 == 0 && nam % 100 != 0)) {
+                        ngay = 29;
+                    } else {
+                        ngay = 28;
+                    }
+                }
+                kl = "Tháng " + thang + " năm " + nam + " có " + ngay + " ngày";
+                // kl = ngay;
+
+                document.getElementById("txtKL").value = kl;
+            }
+        </script>
+        <style type="text/css">
+            table {
+                background-color: #F9C
+            }
+
+            tr td {
+                padding: 4px 0
+            }
+
+            #title {
+                background-color: #F03;
+                color: #000;
+                font-size: 18px;
+                padding: 5px 0;
+                font-family: arial;
+                font-weight: bold
+            }
+
+            #thang_nam {
+                padding-left: 5px
+            }
+
+            input[type="text"] {
+                width: 70px
+            }
+
+            input[id="txtKL"] {
+                width: 250px;
+                color: #F00;
+                font-weight: bold
+            }
+
+            input[id="txtThang"] {
+                margin-left: 65px
+            }
+        </style>
+    </head>
+
+    <body>
+        <form>
+            <table border="0" cellpadding="0" cellspacing="0" width="30%" align="center">
+                <tr align="center">
+                    <td id="title">TÍNH NGÀY TRONG THÁNG</td>
+                </tr>
+                <tr>
+                    <td id="thang_nam">Tháng/năm:
+                        <input type="text" id="txtThang" width="30%" /> /
+                        <input type="text" id="txtNam" width="30%" />
+                    </td>
+                </tr>
+                <tr align="center">
+                    <td>
+                        <input type="button" value="Tính số ngày" onclick="tinhSoNgay()" />
+                    </td>
+                </tr>
+                <tr align="center">
+                    <td>
+                        <input type="text" id="txtKL" />
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </body>
+
+</html>

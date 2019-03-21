@@ -1,0 +1,15 @@
+<html>
+    <head>
+        <title>Từ khóa this trong thẻ HTML</title>
+    </head>
+    <body>
+        <input type="button" id="clickme" onclick="showMessage(this)" value="Click button" />
+
+        <script language="javascript">
+            function showMessage(obj)
+            {
+                alert(obj.type);
+            }
+        </script>
+    </body>
+</html>

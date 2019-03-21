@@ -1,0 +1,38 @@
+<html>
+    <head>
+        <title>Sử dụng Singleton Object</title>
+    </head>
+    <body>
+        <script>
+            var Person = new function(){
+                //thuoc tinh
+                this.username = '';
+                this.password = '';
+
+                //phuong thuc
+                this.setInfo = function(username,password){
+                    this.username = username;
+                    this.password = password;
+                };
+
+                this.checkLogin = function(){
+                    return (this.username == 'admin' && this.password == '123');
+                }
+
+            }
+            
+            //nhap username, password
+            var name = prompt("Moi nhap usernam:");
+            var pass = prompt("Moi nhap password:");
+
+            
+            Person.setInfo(name,pass);
+            if(Person.checkLogin()) {
+                alert("Ban dang nhap thanh cong");
+            }
+            else {
+                alert("Ban dang nhap khong thanh cong");
+            }
+        </script>
+    </body>
+</html>

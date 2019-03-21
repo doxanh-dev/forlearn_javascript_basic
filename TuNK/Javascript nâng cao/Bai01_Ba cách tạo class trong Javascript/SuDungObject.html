@@ -1,0 +1,43 @@
+<html>
+
+<head>
+    <title>Sử dụng Object</title>
+</head>
+
+<body>
+    Username <input type="text" id="username" /><br>
+    Password <input type="password" id="password" /><br>
+    <button type="button" onclick="Login()" >Login</button>
+
+    <script>
+        var Person = {
+            username: "",
+            password: "",
+
+            setInfo: function (username, password) {
+                this.username = username;
+                this.password = password;
+            },
+
+            checkLogin: function () {
+                return (this.username == "admin" && this.password == "123");
+            }
+        }
+
+        function Login() {
+            //lay gia tri cua input
+            var username = document.getElementById("username").value;
+            var password = document.getElementById("password").value;
+
+            Person.setInfo(username, password);
+            if (Person.checkLogin()) {
+                alert("Ban dang nhap thanh cong !");
+            }
+            else {
+                alert("Ban dang nhap khong thanh cong");
+            }
+        }
+    </script>
+</body>
+
+</html>

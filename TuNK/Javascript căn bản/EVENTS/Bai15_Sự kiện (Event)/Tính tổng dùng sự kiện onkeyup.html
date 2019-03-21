@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Tính tổng dùng sự kiện onkeyup</title>
+</head>
+
+<body>
+    a: <input type="text" id="a" value="" onkeyup="tinh()">
+    b: <input type="text" id="b" value="" onkeyup="tinh()">
+
+    ket qua: <input type="text" id="ketqua" value="">
+
+    <script type="text/javascript">
+        function tinh() {
+            //Lay gia tri cua 2 so a va b
+            var a = document.getElementById("a").value;
+            var b = document.getElementById("b").value;
+
+            var ketqua = document.getElementById("ketqua");
+
+            //Tinh tong
+            var tong = parseInt(a) + parseInt(b);
+
+            if (!isNaN(tong)) {
+                ketqua.value = tong;
+            }
+        }
+    </script>
+
+</body>
+
+</html>

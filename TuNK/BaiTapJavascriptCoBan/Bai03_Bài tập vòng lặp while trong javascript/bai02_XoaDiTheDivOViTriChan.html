@@ -1,0 +1,47 @@
+<html>
+
+<head>
+    <title>sử dụng Javascript xóa đi các thẻ div có vị trí chẵn</title>
+</head>
+
+<body>
+    <div>Lẻ</div>
+    <div>Chẵn</div>
+    <div>Lẻ</div>
+    <div>Chẵn</div>
+    <div>Lẻ</div>
+    <div>Chẵn</div>
+    <div>Lẻ</div>
+    <div>Chẵn</div>
+    <div>Lẻ</div>
+    <div>Chẵn</div>
+    <div>Lẻ</div>
+    <div>Chẵn</div>
+    <button onclick="xoa()">Remove</button>
+
+    <script>
+        function xoa() {
+            var listDiv = document.getElementsByTagName("div");
+
+            var theXoa = [];
+
+            //lay ra the div can xoa
+            var i = 0;
+            while (i < listDiv.length) {
+                if ((i + 1) % 2 == 0) {
+                    theXoa.push(listDiv[i]);
+                }
+                i++;
+            }
+
+            //xoa
+            i = 0;
+            while (i < theXoa.length) {
+                theXoa[i].remove();
+                i++;
+            }
+        }
+    </script>
+</body>
+
+</html>

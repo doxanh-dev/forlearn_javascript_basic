@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Bài tập 004</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.25/css/uikit.min.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.25/js/uikit.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.25/js/uikit-icons.min.js"></script>
+
+    <link href="style.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="uk-container">
+        <fieldset class="uk-width-2-3 uk-margin-auto">
+            <h2 class="uk-text-center">Sắp xếp danh sách họ tên sinh viên trong 1 lớp</h2>
+            <button id="button" type="button" class="uk-button uk-button-primary uk-width-1-1 uk-margin-small-bottom">Nhập
+                thông tin về số lượng sinh viên</button>
+
+            <div id="content">
+                <h3 class="uk-text-center">Danh sách sinh viên nhập vào</h3>
+                <textarea class="uk-textarea" id="listDataInput" placeholder="Danh sách sinh viên nhập vào"></textarea>
+
+                <h3 class="uk-text-center">Danh sách sinh viên đã được sắp xếp</h3>
+                <textarea class="uk-textarea" id="listDataOutput" placeholder="Danh sách sinh viên được sắp xếp"></textarea>
+            </div>
+        </fieldset>
+
+    </div>
+    <script>
+        var listSV = [];
+
+        var button = document.getElementById("button");
+
+        button.addEventListener("click", function () {
+            var soSV = prompt("Nhập số lượng sinh viên");
+
+            if (soSV != "" && soSV != null) {
+                var i = 0;
+                while (i < soSV) {
+                    var hoTen = prompt("Nhập họ tên sinh viên:");
+                    if (hoTen != "") {
+                        listSV.push(hoTen);
+                        i++;
+                    }
+                    else {
+                        alert("Hãy nhập họ tên của sinh viên !");
+                    }
+                }
+
+                //hiên thị layput danh sach
+                document.getElementById("content").style.display = "block";
+
+                //tính rows cho textarea
+                var textarea = document.getElementsByTagName("textarea");
+                textarea[0].rows = parseInt(soSV) + 1;
+                textarea[1].rows = parseInt(soSV) + 1;
+
+                //goi ham hien thi list sv được nhập vào
+                getListData("listDataInput", listSV);
+
+                //sắp xếp mảng
+                listSV.sort();
+
+                //goi ham hien thi list sv sau khi sắp xếp
+                getListData("listDataOutput", listSV);
+
+                //xóa các phần tử trong mảng listSv sau khi thực hiện xong
+                listSV.splice(0, listSV.length);
+            }
+            else {
+                alert("Bạn chưa nhập số lượng sinh viên !");
+                return;
+            }
+        });
+
+        //hien thi list du lieu
+        function getListData(idHtml, listData) {
+            var list = document.getElementById(idHtml);
+            list.innerHTML = "";
+            for (var i = 0; i < listData.length; i++) {
+                list.innerHTML += (i + 1) + ". " + listData[i] + "\n";
+            }
+        }
+    </script>
+</body>
+
+</html>

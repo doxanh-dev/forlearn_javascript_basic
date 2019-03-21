@@ -1,0 +1,148 @@
+<html>
+
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>Validate</title>
+        <script language="javascript">
+            function validateForm() {
+                //ktra ma phai la so
+                var txtMa = document.getElementById("txtMa");
+                if (isNaN(txtMa.value) || txtMa.value == "") {
+                    document.getElementById("maError").innerHTML = "Mã phải là số";
+                    //txtMa.style.backgroundColor="#F00";
+                    txtMa.focus();
+                    return;
+                } else {
+                    document.getElementById("maError").innerHTML = "";
+                }
+
+                //ktra ten phai từ 6 den 50 ký tự
+                var txtTen = document.getElementById("txtTen");
+                if (txtTen.value.length < 6 || txtTen.value.length > 50) {
+                    document.getElementById("tenError").innerHTML = "Tên phải từ 6 đên 50 ký tự";
+                    txtTen.focus();
+                    return;
+                } else {
+                    document.getElementById("tenError").innerHTML = "";
+                }
+
+                //ktra số lượng phải >=1 và <=50
+                var txtSoLuong = document.getElementById("txtSoLuong");
+                if (txtSoLuong.value < 1 || txtSoLuong.value > 50) {
+                    document.getElementById("soLuongError").innerHTML = "Số lượng phải >=1 và <=50";
+                    txtMa.focus();
+                    return;
+                } else {
+                    document.getElementById("soLuongError").innerHTML = "";
+                }
+
+                //ktra gia phải >100 và <1000
+                var txtGia = document.getElementById("txtGia");
+                if (txtGia.value <= 100 || txtGia.value >= 1000) {
+                    document.getElementById("giaError").innerHTML = "Giá phải >100 và <1000";
+                    txtGia.focus();
+                    return;
+                } else {
+                    document.getElementById("giaError").innerHTML = "";
+                }
+
+
+                //ktra Loại phải đc chọn
+                var slLoai = document.getElementById("slLoai");
+                if (slLoai.value == 0) {
+                    document.getElementById("loaiError").innerHTML = "Phải được chọn";
+                    slLoai.focus();
+                    return;
+                } else {
+                    document.getElementById("loaiError").innerHTML = "";
+                }
+
+                //ktra Đồng Ý phải đc chọn
+                var ckbDongY = document.getElementById("ckbDongY");
+                if (!ckbDongY.checked) {
+                    document.getElementById("dongYError").innerHTML = "Phải được chọn";
+                    ckbDongY.focus();
+                    return;
+                } else {
+                    document.getElementById("dongYError").innerHTML = "";
+                }
+            }
+        </script>
+        <style type="text/css">
+            div {
+                color: #F00
+            }
+        </style>
+    </head>
+
+    <body>
+        <h3 style="margin-left:60px">Nhập sản phẩm</h3>
+        <form>
+            <table>
+                <tr>
+                    <td>Mã</td>
+                    <td>
+                        <input type="text" id="txtMa" />
+                    </td>
+                    <td>
+                        <div id="maError"></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Tên</td>
+                    <td>
+                        <input type="text" id="txtTen" />
+                    </td>
+                    <td>
+                        <div id="tenError"></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Số lượng</td>
+                    <td>
+                        <input type="text" id="txtSoLuong" />
+                    </td>
+                    <td>
+                        <div id="soLuongError"></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Giá</td>
+                    <td>
+                        <input type="text" id="txtGia" />
+                    </td>
+                    <td>
+                        <div id="giaError"></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Loại</td>
+                    <td>
+                        <select id="slLoai">
+                            <option value="0">--Chọn--</option>
+                            <option value="1">Thủ công mỹ nghệ</option>
+                            <option value="2">Hàng tiêu dùng</option>
+                        </select>
+                    </td>
+                    <td>
+                        <div id="loaiError"></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>
+                        <input type="checkbox" id="ckbDongY" /> Đồng ý
+                    </td>
+                    <td>
+                        <div id="dongYError"></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2" align="center">
+                        <input type="button" value="Nhập" onclick="validateForm()" />
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </body>
+</html>

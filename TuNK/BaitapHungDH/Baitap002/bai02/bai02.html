@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Bai02</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.25/css/uikit.min.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.25/js/uikit.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.25/js/uikit-icons.min.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="style.css" />
+</head>
+
+<body>
+    <div class="uk-container">
+        <fieldset class="uk-width-2-3 uk-margin-auto">
+            <div uk-grid>
+                <div class="uk-width-2-3 uk-margin-auto">
+                    <label class="uk-width-1-1"><b>In dãy số</b></label>
+                    <input type="text" id="textInput1" class="mr-10px uk-width-1-1 uk-input test" placeholder="Nhập số thứ nhất" />
+                    <input type="text" id="textInput2" class="mr-10px uk-width-1-1 uk-input test" placeholder="Nhập số thứ hai" />
+                    <button type="button" id="button" class="mr-10px uk-button uk-button-primary uk-float-right">In dãy số</button>
+                </div>
+                <div id="content" class="uk-width-2-3 uk-margin-auto">
+                    <label class="uk-width-1-1"><b id="title"></b></label>
+                    <input type="text" id="result" class="mr-10px uk-width-1-1 uk-input" placeholder="Kết quả" />
+                </div>
+            </div>
+        </fieldset>
+    </div>
+
+    <script>
+        // Nhập vào 2 số nguyên, in ra dãy số chia hết cho 3 nhưng không chia hết cho 9 giữa 2 số này.
+        // Có bao nhiêu số thỏa điều kiện này.
+        var count = 0;
+        var button = document.getElementById("button");
+
+        button.addEventListener("click", function () {
+            var number1 = document.getElementById("textInput1");
+            var number2 = document.getElementById("textInput2");
+
+            if (number1.value == "") {
+                UIkit.modal.alert("Vui lòng nhập số nguyên thứ nhất!").then(function () {
+                    number1.focus();
+                });
+            }
+            else if (number2.value == "") {
+                UIkit.modal.alert("Vui lòng nhập số nguyên thứ hai!").then(function () {
+                    number2.focus();
+                });
+            }
+            else if (isNaN(number1.value) || isNaN(number2.value)) {
+                UIkit.modal.alert("Vui lòng nhập vào input là số nguyên!");
+            }
+            else if (parseInt(number1.value) > parseInt(number2.value)) {
+                UIkit.modal.alert("Vui lòng nhập số thứ hai lớn hơn số thứ nhất!").then(function () {
+                    number1.focus();
+                });
+            }
+            else {
+                var result = InDaySo(parseInt(number1.value), parseInt(number2.value));
+
+                if (result != "") {
+                    document.getElementById("content").style.display = "block";
+                    document.getElementById("title").innerHTML = "Dãy số được hiển thị từ " + number1.value + " đến " + number2.value;
+                    document.getElementById("result").value = result;
+                    UIkit.modal.alert("Có " + count + " số thỏa mãn điều kiện!").then(function () {
+                        number1.value = "";
+                        number2.value = "";
+                        number1.focus();
+                        count = 0;
+                    });
+                    
+                }
+                else {
+                    UIkit.modal.alert("Không có dãy số nào thỏa mãn từ <b>" + number1.value + "</b> đến <b>" + number2.value + "</b>").then(function () {
+                        number1.focus();
+                    });
+                }
+            }
+        });
+
+        //ham in day so từ số thứ nhất đến số thứ 2 thỏa mãn dk
+        function InDaySo(num1, num2) {
+            var result = '';
+
+            for (var i = num1; i <= num2; i++) {
+                if (i % 3 == 0 && i % 9 != 0) {
+                    result += i + ' - ';
+                    count++;
+                }
+            }
+
+            //cat ky tu "-" va khoang trang o cuoi chuoi result
+            result = result.substring(0, result.length - 3);
+
+            return result;
+        }
+    </script>
+</body>
+
+</html>

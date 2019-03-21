@@ -1,0 +1,53 @@
+<html>
+
+<head>
+    <title>Bài tập kiểm tra số chính phương</title>
+</head>
+
+<body>
+    <input type="text" id="txtSo" placeholder="Moi nhap so">
+    <input type="button" id="btn-button" value="Gui" />
+    <script>
+        //lay doi tuong button
+        var button = document.getElementById("btn-button");
+        
+        //them su kien click cho button
+        button.addEventListener("click", function () {
+            var num = document.getElementById("txtSo");
+            if (isNaN(num.value)) {
+                alert("Ban phai nhap so !");
+                num.value = "";
+                num.focus();
+                return;
+            }
+            else if (num.value <= 0) {
+                alert("Ban phai nhap so lon hon 0 !");
+                num.value = "";
+                num.focus();
+                return;
+            }
+            else {
+                if (KiemTraSoChinhPhuong(num.value)) {
+                    alert("So " + num.value + " la so chinh phuong");
+                }
+                else {
+                    alert("So " + num.value + " khong phai la so chinh phuong");
+                }
+            }
+        });
+        
+        //ham kiem tra so chinh phuong
+        function KiemTraSoChinhPhuong(num) {
+            var result = false;
+            if (Math.sqrt(num) % 1 == 0) {
+                result = true;
+                return result;
+            }
+            else {
+                return result;
+            }
+        }
+    </script>
+</body>
+
+</html>
