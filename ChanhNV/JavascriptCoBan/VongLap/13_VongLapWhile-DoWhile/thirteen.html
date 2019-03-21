@@ -1,0 +1,40 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+	</head>
+	<body>
+		
+		<script language="javascript">
+			//Dùng vòng lặp vô hạn lặp từ 1-10;
+			var stepSum = 1;
+			while(stepSum < 10)
+			{
+				document.write(stepSum + ' ');
+				stepSum++;// tăng number lên nếu không sẽ bị lặp vô hạn
+			}
+			document.write('</br>');
+			
+			var stepSubtract = 20;
+			while(stepSubtract > 10)
+			{
+				document.write(stepSubtract + ' ');
+				stepSubtract--;// giảm i xuống nếu không sẽ bị lặp vô hạn
+			}
+			
+			
+			// Lặp với điều kiện phức tạp.
+			//Biến lưu giá trị người dùng nhập vào
+			var value = null;
+			
+			//Trong khi giá trị bé hơn hoặc giá trị lớn hơn 10
+			//thì chạy thân vòng lặp
+			while(value < 1 || value > 10)
+			{
+				value = prompt("Nhập vào số từ 1 -> 10");
+			}
+			// Sau khi nhập đúng thì in ra màn hình
+			alert("Số bạn vừa nhập là " + value);
+		</script>
+	</body>
+</html>

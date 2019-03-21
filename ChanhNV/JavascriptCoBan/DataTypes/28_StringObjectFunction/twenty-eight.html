@@ -1,0 +1,54 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+	</head>
+	<body>
+		
+		
+		
+		
+		
+		<script language="javascript">
+			var string = "Chào mừng bạn đến với freetuts.net";
+			document.write("Vị trí xuất hiện chuỗi freetuts.net là: " + string.indexOf("freetuts.net"));<br>
+
+			
+			var string = "Website freetuts.net - học lập trình miễn phí tại freetuts.net";
+			document.write("Vị trí xuất hiện chuỗi freetuts.net là: " + string.lastIndexOf("freetuts.net"));
+			
+			
+			var string = "Welcome to freetuts.net";
+			document.write("Chuỗi cần lấy là: " + string.slice(11, 23));
+			
+			
+			var string = "Welcome to freetuts.net";
+			document.write(string.toUpperCase() + "<br/>");
+			document.write(string.toLowerCase());
+			
+			var string = "Welcome " + "to" + " freetuts.net";
+			document.write(string + "<br/>");
+ 
+			// hoặc
+			var string = "Welcome ";
+			string = string.concat("to ", "freetuts.net");
+			document.write(string + "<br/>");
+
+			
+			var string = "Welcome freetuts.net";
+ 
+			document.write(string.charAt(1) + "<br/>");
+			document.write(string.charCodeAt(1) + "<br/>");
+			
+			
+			string = "Welcome freetuts.net";
+ 
+			// Tạo thành mảng với mỗi phần tử ngăn bởi khoảng trắng
+			// kết quả là mảng có hai phần tử gồm: welcome và feetuts.net
+			document.write(string.split(" ").length);
+			
+			
+		</script>
+		
+  </body>
+</html>

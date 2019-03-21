@@ -1,0 +1,54 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+	</head>
+	<body>
+		<div>
+			<input type="text" value="Hello" id="get_by_ID" />
+		</div>
+	
+		<div>
+			<input type="text" value="saiShunkan.net"/>
+		</div>
+		
+		<div>
+			<input type="text" class="findByTagName" value="Find tag HTML by name Class"/>
+		</div>
+		
+		
+		
+		<div>
+			<input type="text" value="thẻ không cần lấy" class="website"/>
+			<div>
+				<input type="text" value="Thẻ Cần Lấy" class="website"/>
+				</br>
+				<input type="text" value="thẻ không cần lấy"/>
+			</div>
+		</div>
+	
+		<script language="javascript">
+			//Get tag by id
+			var get_by_ID = document.getElementById('get_by_ID');
+			document.write(get_by_ID.value + '</br>');
+			
+			
+			//Find tag HTML by name tag HTML
+			var tagByTagTame = document.getElementsByTagName('input');
+			//Get value of tag input
+			document.write(tagByTagTame[1].value + '</br>');
+			
+			
+			//Find tag HTML by name Class
+			var tagByClassName = document.getElementsByClassName('findByTagName');
+			//Get value of tag input
+			document.write(tagByClassName[0].value + '</br>');
+			
+			
+			
+			//Tìm thẻ HTML theo cú pháp của Selector CSS
+			var element = document.querySelectorAll("div div input.website");
+			document.write(element[0].value);
+		</script>
+  </body>
+</html>

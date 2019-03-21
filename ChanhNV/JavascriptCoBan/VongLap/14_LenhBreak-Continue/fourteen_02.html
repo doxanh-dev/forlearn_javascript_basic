@@ -1,0 +1,41 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+	</head>
+	<body>
+		
+		<script language="javascript">
+			document.write('Lệnh continue trong Javascript:');
+			document.write('</br>');
+			document.write('Vòng lặp for bỏ qua đoạn code in ra giá trị 5');
+			document.write('</br>');
+			for(var index = 1; index < 10; index++)
+			{
+				if(index == 5)
+				{
+					document.write('(' + index + ' Bị bỏ qua do có continue ' + ') ');
+					continue;
+					
+				}
+				document.write(index + ' ');
+			}
+			
+			document.write('</br>');
+			document.write('Vòng lặp while bỏ qua bước lặp nếu i chia hết cho 7');
+			document.write('</br>');
+			var index2 = 1;
+			while (index2 < 10)
+			{
+				if(index2 % 7 == 0)
+				{
+					document.write('(' + index2 + ' bị bỏ qua do có continue ) ');
+					index2++;
+					continue;
+				}
+				document.write(index2 + ' ');
+				index2++;
+			}
+		</script>
+	</body>
+</html>

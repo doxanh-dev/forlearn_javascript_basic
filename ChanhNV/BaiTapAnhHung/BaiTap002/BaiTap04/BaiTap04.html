@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Bài tập 04</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Link UIkit -->
+    <link rel="stylesheet" href="css/uikit.min.css" />
+    <script src="js/uikit.min.js"></script>
+    <script src="js/uikit-icons.min.js"></script>
+</head>
+
+<body>
+    <div class="uk-container uk-container-expand uk-padding">
+        <h4> Chương trình kiểm tra sinh viên có đạt học bổng không!</h4>
+        <div class="uk-child-width-expand@s" uk-grid>
+
+
+            <div class="uk-grid-item-match">
+
+                <form class="uk-form-stacked">
+
+                    <div class="uk-margin">
+                        <label class="uk-form-label" for="form-stacked-text">Nhập họ tên:</label>
+                        <div class="uk-form-controls">
+                            <input id="HoTen" class="uk-input" type="text" placeholder="Họ tên sinh viên...">
+                        </div>
+                    </div>
+
+                    <div class="uk-margin">
+                        <label class="uk-form-label" for="form-stacked-text">Nhập điểm Toán:</label>
+                        <div class="uk-form-controls">
+                            <input id="DiemToan" class="uk-input" type="text" placeholder="Điểm môn Toán...">
+                        </div>
+                    </div>
+
+                    <div class="uk-margin">
+                        <label class="uk-form-label" for="form-stacked-text">Nhập điểm Anh:</label>
+                        <div class="uk-form-controls">
+                            <input id="DiemAnh" class="uk-input" type="text" placeholder="Điểm môn Anh Văn...">
+                        </div>
+                    </div>
+
+                    <div class="uk-margin uk-text-center">
+                        <button id="btnKiemTra" type="button"  class="uk-button uk-button-success uk-width-1-2 uk-margin-small-bottom">Kiểm Tra</button>
+                    </div>
+
+                </form>
+
+            </div>
+
+            <div class="uk-grid-item-match">
+                <form class="uk-form-stacked">
+                    <div class="uk-margin">
+
+                        <div class="uk-form-controls">
+                            <label class="uk-form-label" for="form-stacked-text">Kết quả</label>
+                            <textarea id="showResult" class="uk-textarea uk-form-success" rows="8" placeholder="Kết quả..."></textarea>
+                        </div>
+
+                    </div>
+                </form>
+            </div>
+        </div>
+
+    </div>
+
+
+    <script src="js/baitap04.js"></script>
+</body>
+
+</html>

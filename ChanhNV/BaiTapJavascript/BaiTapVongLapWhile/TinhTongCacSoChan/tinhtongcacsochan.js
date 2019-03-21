@@ -1,0 +1,6 @@
+
+
+//Function TinhTongCacSoChan
+function TinhTongCacSoChan(){
+    
+}

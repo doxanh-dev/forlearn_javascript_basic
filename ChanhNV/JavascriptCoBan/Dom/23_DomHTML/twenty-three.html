@@ -1,0 +1,79 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+	</head>
+	<body>
+		<script language="javascript">
+			//Function set content for div#content
+			function set_content()
+			{
+				document.getElementById('content').innerHTML = "<h2>Nội dung đã được thay đổi</h2>";
+			}
+			
+			//Function get content for div#content
+			function get_content()
+			{
+				var get_div_content = document.getElementById('content').innerHTML;
+				alert('Content get is: ' + get_div_content);
+			}
+			
+			//Function change attribute button
+			function changeAttibuteButton()
+			{
+				//Get object
+				var btnChange = document.getElementById('btnChange');
+				//Get attribute type of object
+				var attrObject = btnChange.type;
+				//Check attribute and change
+				if(attrObject == "button")
+				{
+					btnChange.type = "text";
+				}
+				else
+				{
+					btnChange.type = "button";
+				}
+			}
+			
+			//Function add content
+			function add_content()
+			{
+					//Get object add content
+					var div_add_content = document.getElementById('add_content');
+					//Get current content
+					var current_content = div_add_content.innerHTML;
+					//Add content a div
+					var content_append = "<h3>Nội dung thêm vào!</h3>";
+					//Add content to div_add_content
+					div_add_content.innerHTML = current_content + content_append;
+					//alert('Content get is: ' + show_content);
+			}
+				
+			
+		</script>
+		
+		<div>
+			<div id="content" >
+				Nội dung của thẻ div
+			</div>
+
+			
+			<input type="button" value="Lấy nội dung" id="get_content" onclick="get_content()" />
+			<input type="button" value="Thay đổi nội dung" id="set_content" onclick="set_content()" />
+		</div>
+		
+		<div>
+			<input type="button" value="Click me change attribute" onclick="changeAttibuteButton()" id="btnChange" />
+		</div>
+		
+		
+		<div>
+			<div id="add_content" >
+				<h3>Nội dung hiện tại</h3>
+			</div>
+			
+			<input type="button" value="Click thêm nội dung" id="show_content" onclick="add_content()" />
+		</div>
+  </body>
+</html>

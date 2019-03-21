@@ -1,0 +1,49 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+	</head>
+	<body>
+		<!-- <input type="button" onclick="alert('Hello Saishunkan')" value ="Clickme" /> -->
+		<!-- </br> -->
+		
+		<script language="javascript">
+			<!-- var number = parseInt(prompt('Please fill a number to check: ')); -->
+			//Function Check number
+			function checkNumber(number)
+			{
+				if(number % 2 == 0)
+				{
+					alert(number + ' là số chẵn!');
+				}
+				else
+				{
+					alert(number + ' là số lẻ!');
+				}
+			}
+			checkNumber(1);
+			checkNumber(2);
+			
+			
+			function getSumHaveReturn(numberOne, numberTwo)
+			{
+				return numberOne + numberTwo;
+			}
+			var numberOne = 5;
+			var numberTwo = 10;
+			
+			var SumOne = getSumHaveReturn(numberOne, numberTwo);
+			alert(SumOne);
+			
+			function getSumHaveNoReturn(numberThree, numberFour)
+			{
+				document.write('Sum is: ' + (numberThree + numberFour));
+			}
+			var numberThree = 20;
+			var numberFour = 40;
+			
+			getSumHaveNoReturn(numberThree, numberFour);
+
+		</script>
+	</body>
+</html>

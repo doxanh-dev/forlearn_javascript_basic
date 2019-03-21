@@ -1,0 +1,87 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+	</head>
+	<body>
+		
+		<div>
+			<h3>Function show content in a form input</h3>
+			<input type="text" id="content" value="" onkeyup="show_Content_Input()" />
+			<div id="result">
+			</div>
+		</div>
+		
+		<div>
+			<h3>Function show message when copy content success in website</h3>
+			<div id="div_copy" oncopy="show_Message_When_Copy()">
+				<h3>Please copy content in tag here.</h3>
+			</div>
+			</br>
+		</div>
+		
+		<div>
+			<h3>Function calculate from two number automatic</h3>
+			<span>Number One:</span><input type="text" id="numberOne"
+			onkeyup="calculate_Two_Number_Automatic()" /></br>
+			<span>Number Two:</span><input type="text" id="numberTwo" 
+			onkeyup="calculate_Two_Number_Automatic()" /></br>
+			<span>Sum:</span><input type="text" id="resultSum"/></br>
+			<div id="divresultSum"></div>
+		</div>
+		
+		
+		<script language="javascript">
+			//Function show content in a form input
+			function show_Content_Input()
+			{
+				//Dom to two Tag HTML
+				var input_content = document.getElementById('content');
+				var div_result = document.getElementById('result');
+				
+				//Set content in input_content tag to div_result tag
+				div_result.innerHTML = input_content.value;
+			}
+			
+			//Function show message when copy content in website
+			function show_Message_When_Copy()
+			{
+				//Dom tag div which have content to copy
+				//var div_copy = 
+				alert('You copy content success!');
+			}
+			
+			//Function calculate from two number automatic
+			function calculate_Two_Number_Automatic()
+			{
+				//Dom two tag input which you fill
+				var numberOne = document.getElementById('numberOne');
+				var numberTwo = document.getElementById('numberTwo');
+				//Convert string to int to calculate
+				numberOne = parseInt(numberOne.value);
+				numberTwo = parseInt(numberTwo.value);
+				
+				//declare a var to save sum
+				var sum = numberOne + numberTwo;
+				//Dom tag input to show result calculate Sum
+				var resultSum = document.getElementById('resultSum');
+				
+				//Demo with a div
+				var divresultSum = document.getElementById('divresultSum');
+				//Check input isNaN then show value
+				if(!isNaN(sum))
+				{
+					resultSum.value = sum;
+					setTimeout(function()
+					{
+						alert('Sum is: ' + resultSum.value);
+					}, 3000);
+					divresultSum.innerHTML = sum;
+				}
+				
+			}
+			
+			
+		</script>
+	</body>
+</html>

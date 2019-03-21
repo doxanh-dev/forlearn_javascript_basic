@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Bài tập 006</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Link UIkit -->
+    <link rel="stylesheet" href="css/uikit.min.css" />
+    <script src="js/uikit.min.js"></script>
+    <script src="js/uikit-icons.min.js"></script>
+    <link rel="stylesheet" href="css/baitap006.css">
+</head>
+
+<body>
+    <div class="uk-container uk-container-center">
+
+        <div class=" uk-width-1-3 uk-align-center uk-margin-top uk-calculator">
+
+            <div class="uk-grid uk-margin-small uk-padding-small uk-align-center" uk-grid>
+                <div class="uk-calculator-content uk-text-large uk-text-bold">
+                    <div>
+                        <input class="uk-input uk-form-blank uk-content box-calculation uk-text-emphasis" id="box-calculation" type="text" value="">
+                        <!-- <input class="uk-input uk-form-blank box-result uk-text-right uk-text-emphasis" type="text" value=""> -->
+                        <button class="uk-input uk-form-blank box-result uk-text-right uk-text-emphasis" type="button"></button>
+                    </div>
+                    <div class="uk-text-center uk-text-large uk-text-bold">
+                        <button id="refresh" class="uk-button grp1 uk-button-danger uk-text-large uk-border-pill refresh" type="button">CE</button>
+                        <button id="del" class="uk-button grp1 uk-button-secondary uk-text-large uk-border-pill del" type="button">Del</button>
+                        <input class="uk-button grp1 uk-button-success uk-text-large uk-border-pill plus operation" type="button" value="+"></input>
+                        <input class="uk-button grp1 uk-button-success uk-text-large uk-border-pill minus operation" type="button" value="-"></input>
+                        <input class="uk-button grp1 uk-button-success uk-text-large uk-border-pill times operation" type="button" value="*"></input>
+                        <input class="uk-button grp1 uk-button-success uk-text-large uk-border-pill divide operation" type="button" value="/"></input>
+                    </div>
+
+                    <div class="uk-text-center">
+                        <input value="9" class="uk-button grp1 uk-button-primary uk-text-large uk-border-pill number" type="button"></input>
+                        <input value="8" class="uk-button grp1 uk-button-primary uk-text-large uk-border-pill number" type="button"></input>
+                        <input value="7" class="uk-button grp1 uk-button-primary uk-text-large uk-border-pill number" type="button"></input>
+                        <input value="6" class="uk-button grp1 uk-button-primary uk-text-large uk-border-pill number" type="button"></button>
+                        <input value="5" class="uk-button grp1 uk-button-primary uk-text-large uk-border-pill number" type="button"></input>
+                        <input value="4" class="uk-button grp1 uk-button-primary uk-text-large uk-border-pill number" type="button"></input>
+                        <input value="3" class="uk-button grp1 uk-button-primary uk-text-large uk-border-pill number" type="button"></input>
+                        <input value="2" class="uk-button grp1 uk-button-primary uk-text-large uk-border-pill number" type="button"></input>
+                        <input value="1" class="uk-button grp1 uk-button-primary uk-text-large uk-border-pill number" type="button"></input>
+                        <input value="0" class="uk-button grp1 uk-button-primary uk-text-large uk-border-pill number" type="button"></input>
+                        <input id="dot" class="uk-button grp1 uk-button-primary uk-text-large uk-border-pill dot uk-button-secondary" type="button" value="."></input>
+                        <input id="equal" value="=" class="uk-button grp1 uk-button-primary uk-text-large uk-border-pill equal" type="button"></input>
+                    </div>
+
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+
+    <!-- Link js -->
+    <script src="js/baitap006.js"></script>
+</body>
+
+</html>

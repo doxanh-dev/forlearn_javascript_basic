@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	
+	<script>
+		//Create watch online by javascript
+		//Declare watch
+		function startTime()
+		{
+			//Get Date now
+			var daynow = new Date();
+			
+			//Get hour, minute, second now
+			var hour = daynow.getHours();
+			var minute = daynow.getMinutes();
+			var second = daynow.getSeconds();
+			
+			//Convert value minute, second to 01, 02, 03
+			minute = checkTime(minute);
+			second = checkTime(second);
+			
+			//print in browser
+			document.getElementById('timer').innerHTML = hour + ":" + minute + ":" + second;
+			
+			//Use function to call 0.5s/turn
+			var t= setTimeout(function() {
+				startTime();
+			}, 500);
+			
+		}
+		
+		// Hàm này có tác dụng chuyển những số bé hơn 10 thành dạng 01, 02, 03, ...
+        function checkTime(i)
+        {
+              if(i < 10)
+				{
+					i = "0" + i;
+				}
+			return i;
+        } 
+		
+		
+	</script>
+	
+</head>
+<body onload="startTime()">
+	
+	<div id="timer">
+	</div>
+	
+	
+
+</body>
+</html>

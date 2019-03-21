@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+	
+	
+	
+    
+    
+
+	<script type="text/javascript">
+		// Đề bài: Viết chương trình quản lý sinh viên gồm các thao tác chính như sau:
+
+		// Xem danh sách sinh viên
+		// Thêm sinh viên
+		// Xóa sinh viên khỏi danh sách
+		// Sửa thông tin sinh viên
+		// Với mỗi sinh viên cần lưu trữ các thông tin sau:
+
+		// Mã sinh viên
+		// Tên sinh viên
+		// Email
+		
+		//Declare a array to save Student
+		// var Student = {
+		// 	data : [],
+		// 	viewStudent : function(){
+		// 		// View list student
+		// 	}, 
+		// 	addStudent : function(){
+		// 		//Add new student
+		// 	},
+		// 	editStudent : function(id, name, email){
+		// 		//Edit student
+		// 	}
+		// }
+		
+		// //Function viewStudent
+		// viewStudent : function(){
+		// 	//get list student
+		// 	var listStudent = this.data;
+
+		// 	//Repeate and view student
+		// 	for(var index = 0; index < listStudent; index++)
+		// 	{
+		// 		document.write(
+		// 			"div" + listStudent[i].id + "|"
+		// 			+ listStudent[i].name + "|" +
+		// 			listStudent[i].email + "</div>"
+		// 		);
+		// 	}
+		// }
+
+		// //Function Add Student
+		// addStudent : function(id, name, email)
+		// {
+		// 	//Create information Student
+		// 	var student = {
+		// 		id: id,
+		// 		name : name,
+		// 		email : email
+		// 	};
+
+		// 	//Add Student
+		// 	this.data.push(student);
+		// }
+
+
+		// //Function Remove Student
+		// removeStudent : function()
+		// {	
+		// 	//Repeat student to search and remove
+		// 	for(var index = 0; index.data.length; index++)
+		// 	{
+		// 		if(this.data[i].id === id)//if student need remove
+		// 		{
+		// 			this.data.splice(index, 1)//remove
+		// 		}
+		// 	}
+		// }
+
+
+		// editStudent : function(id, name, email) {
+		// 	//Find student need edit
+		// 	for(var index; index < this.data.length; index++)
+		// 	{
+		// 		//if student need edit then we edit
+		// 		if(this.data[index].id === id)
+		// 		{
+		// 			this.data[i].name = name;
+		// 			this.data[i].email = email;
+		// 		}
+		// 	}
+
+		// }
+			
+
+		var Student = {
+			data : [],
+			viewStudent : function()
+			{
+				//get list student
+				var listStudent = this.data;
+
+				//Repeate and view student
+				for(var index = 0; index < listStudent.length; index++)
+				{
+				 	document.write(
+				 		"<div>" + listStudent[index].id + "|" + listStudent[index].name + "|" + listStudent[index].email + "</div>"
+				 	);
+				}
+			},
+
+			addStudent : function(id, name, email)
+			{
+				//Create infomation student
+				var student = {
+					id: id,
+					name: name,
+					email : email
+				}
+
+				//Add student
+				this.data.push(student);
+			},
+			
+			removeStudent : function(id)
+			{
+				//Repeate student to find and remove
+				for(var index = 0; index < this.data.length; index++)
+				{
+					if(this.data[index].id === id)//if student remove
+					{
+						this.data.splice(index, 1);//remove
+					}
+				}
+			},
+
+			editStudent : function(id, name, email)
+			{
+				//Find student need edit
+				for(var index = 0; index < this.data.length; index++)
+				{
+					//if student need edit
+					if(this.data[index] === id)
+					{
+						this.data[index].name = name;
+						this.data[index].email = email;
+					}
+				}
+			}
+
+		}
+
+		//Load list student before
+		document.write('<h3>List Student</h3>' + '</br>');
+		Student.addStudent("sv01", 'Nguyễn Văn Cường', "thehalfheart@gmail.com");
+		Student.addStudent("sv02", 'Vũ Thị Thu Tình', "freetuts.net@gmail.com");
+		Student.viewStudent();
+ 
+		document.write('<h4>Danh sách sinh viên sau khi thêm hai sinh viên</h4>');
+		Student.addStudent("sv03", 'Nguyễn Văn Cường', "thehalfheart@gmail.com");
+		Student.addStudent("sv04", 'Vũ Thị Thu Tình', "freetuts.net@gmail.com");
+		Student.viewStudent();
+		
+
+		document.write('<h4>Danh sách sinh viên sau khi xóa một sinh viên</h4>');
+		Student.removeStudent('sv01');
+		Student.viewStudent();
+
+		document.write('<h4>Danh sách sinh viên sau khi sửa thông tin</h4>');
+		Student.editStudent("sv02", "Tên Sinh Viên Mới", "mrcuong.winter@gmail.com");
+		Student.viewStudent();
+	</script>
+</body>
+</html>

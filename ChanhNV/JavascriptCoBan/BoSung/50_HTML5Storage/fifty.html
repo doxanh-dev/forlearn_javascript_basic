@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+	
+    
+
+    <script type="text/javascript">
+        //Check localstorage
+        //2. localStorage Object
+        if (typeof(Storage))
+        {
+            var domain = 'saishunkan';
+            localStorage.setItem('domain', domain);
+            //document.write('Trình duyệt của bạn có hỗ trợ localStorage')
+        }
+        else{
+            document.write('Trình duyệt của bạn không hỗ trợ localStorage!')
+        }
+        
+        if (typeof(Storage) !== "undefined") {
+            var domain = localStorage.getItem('domain');
+            document.write(domain + '</br>'); // kết quả saishunkan
+        } else {
+            document.write('Trình duyệt của bạn không hỗ trợ local storage');
+        }
+        
+        //3. sessionStorage Object
+        if (typeof(Storage) !== "undefined")
+         {
+        // Gán dữ liệu
+        sessionStorage.domain = 'hello.net';
+        
+        // Lấy dữ liệu
+        var domain = sessionStorage.domain; // hello.net
+        document.write(domain + '</br>');
+        } else 
+        {
+            document.write('Trình duyệt của bạn không hỗ trợ local storage');
+        }
+
+	</script>
+</body>
+</html>

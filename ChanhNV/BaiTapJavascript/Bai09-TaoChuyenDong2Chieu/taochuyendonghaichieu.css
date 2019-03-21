@@ -1,0 +1,35 @@
+/* Css cho khối chuyển động */
+.khoi{
+    width:400px;
+    height: 200px;
+    border: solid 2px red;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+
+/* Css phục vụ cho javascript tạo chuyển động */
+.action01{
+    animation: action01 2s forwards ;
+}
+/* Sự kiện Khi click lần 1*/
+@-webkit-keyframes action01{
+    0%{transform: translateX(0);margin-top: 0;}
+    30%{transform: translateX(200px);margin-top: 0;}
+    60%{transform: translateX(200px);margin-top:100px;}
+    100%{transform: translateX(400px);margin-top: 100px;}
+}
+
+
+/*Sự kiện Khi click lần 2*/
+.action02{
+    animation: action02 2s forwards;
+}
+@-webkit-keyframes action02{
+    100%{transform: translateX(0);margin-top: 0;}
+    60%{transform: translateX(200px);margin-top: 0;}
+    30%{transform: translateX(200px);margin-top: 100px;}
+    0%{transform: translateX(400px);margin-top: 100px;}
+}

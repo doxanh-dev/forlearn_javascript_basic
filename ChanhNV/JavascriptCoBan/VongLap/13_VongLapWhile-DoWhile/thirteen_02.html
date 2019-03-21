@@ -1,0 +1,53 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+	</head>
+	<body>
+		
+		<script language="javascript">
+			//Chứng minh vòng lặp do while lặp ít nhất 1 lần
+			do 
+			{
+				alert(1);
+			}
+			while(false);
+			
+			
+			//Sử dụng vòng lặp do while để viết lại chương trình
+			//yêu cầu nhập các số từ 1 -> 10 ở ví dụ trong phần vòng lặp while.
+			
+			//Biến lưu giá trị người dùng nhập vào
+			var value = null;
+			//Thực thi
+			do
+			{
+				value = prompt("Nhập vào 1 số từ 1->10");
+			}
+			while(value < 1 || value > 10)
+			//Sau khi nhập đúng thì in ra màn hình
+			alert("Số bạn nhập là " +  value);
+			
+			//Dùng vòng lặp while xây dựng ma trận 10x10
+			document.write('<hr>');
+			var row = 0;
+			while(row <= 9)
+			{
+				//mỗi lần lặp gán col = 0;
+				var col = 0;
+				//Lặp col nếu col <= 10
+				while(col <= 9)
+				{
+					//In ra màn hình
+					document.write( '['+ row+col + ']');
+					//Tăng col lên nếu không sẽ lặp vô hạn
+					col++;
+				}
+				//Xuống hàng khác
+				document.write('</br>');
+				//Tăng row lên nếu khoogn sẽ lặp vô hạn
+				row++;
+			}
+		</script>
+	</body>
+</html>

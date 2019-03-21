@@ -1,0 +1,43 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+	</head>
+	<body>
+		<input type="button" onclick="alert('Hello Saishunkan')" value ="Clickme" />
+		</br>
+		
+		<script language="javascript">
+			//Get value from User
+			var NumberA = prompt('Please Fill number A: ');
+			var NumberB = prompt('Please Fill number B:');
+
+			//Convert string to NumberA
+			NumberA = parseInt(NumberA);
+			NumberB = parseInt(NumberB);
+				
+			//Print Result in Browser
+			if(NumberA > NumberB)
+			{
+				document.write( 'Value '+ NumberA +' than '+ NumberB+'</br>');
+			}
+			else if(NumberB > NumberA )
+			{
+				document.write( 'Value '+ NumberB +' than '+ NumberA+'</br>');
+			}
+			else
+			{
+				document.write( 'Value '+ NumberA +'== '+ NumberB +'</br>');
+			}
+			
+			if(NumberA % 2 == 0)
+			{
+				document.write( NumberA +' là số chẵn');
+			}
+			else
+			{
+				document.write(NumberA + ' là số lẻ');
+			}
+		</script>
+	</body>
+</html>

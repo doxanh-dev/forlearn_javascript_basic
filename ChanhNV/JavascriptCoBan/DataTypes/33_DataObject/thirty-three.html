@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+	
+	
+	<script>
+		//Đối tượng Date trong Javascript
+		//bốn cách khởi tạo thông thường nhất.
+		// Thời gian hiện tại
+		console.log(new Date());
+		// Tham số truyền vào là mili giây
+		console.log(new Date(30000));
+		// Tham số truyền vào là chuỗi ngày tháng
+		console.log(new Date(20181010));
+		 
+		// Tham số truyền vào gồm
+		//  - year:         năm
+		//  - month:        tháng
+		//  - day:          ngày
+		//  - hours:        giờ
+		//  - minutes:      phút
+		//  - seconds:      giây
+		//  - milliseconds: mini giây
+		<!-- new Date(year, month, day, hours, minutes, seconds, milliseconds); -->
+		
+		var dateObj = new Date(2013, 11, 20);
+		console.log(dateObj);
+		
+		
+		//Định dạng (format) Date trong Javascript
+		//Có ba định dạng chính đó là:
+		//ISO
+		//Long
+		//Short
+		
+		//Định dạng ISO
+		//Định dạng chuẩn của ISO 8601 là (YYYY-MM-DD) hoặc (YYYY-MM) hoặc (YYYY)
+		//Có một lưu ý nếu bạn truyền vào không đủ (ngày - tháng - năm - giờ - phút - giây)
+		//thì mặc định các tham số khác sẽ lấy thời gian nhỏ nhất.
+		
+		
+		//Định dạng Short
+		//Định dạng Short được lưu trữ dưới dạng MM/DD/YYYY
+		//hoặc YYYY/MM/DD hoặc MM-DD-YYYY hoặc YYYY-MM-DD/
+		
+		//Định dạng đầy đủ
+		
+		//Trên là những định dạng ghi tắt, 
+		//nếu truyền đầy đủ thì bạn phải truyền đẩy đủ (ngày - tháng - năm - giờ - phút - giây - timezone):
+		
+		
+	</script>
+
+</body>
+</html>

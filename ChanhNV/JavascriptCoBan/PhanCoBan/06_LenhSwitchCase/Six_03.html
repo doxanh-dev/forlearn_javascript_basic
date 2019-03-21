@@ -1,0 +1,46 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+	</head>
+	<body>
+		<!-- <input type="button" onclick="alert('Hello Saishunkan')" value ="Clickme" /> -->
+		<!-- </br> -->
+		
+		<script language="javascript">
+			//Fill a code fruit
+			var Fruid_Cd = prompt('Please fill Fruid Code: ');
+			alert('Fruid Cd is: ' + Fruid_Cd )
+			//Declare a var save name fruit
+			var Fruid_Name = '';
+			
+			//Get name fruit in garden
+			switch(Fruid_Cd)
+			{
+				case '1':
+					Fruid_Name = "Quả đu đủ";
+					break;
+				case '2':
+					Fruid_Name = "Quả Chanh";
+					break;
+				case '3':
+					Fruid_Name = "Quả Dừa";
+					break;
+				case '4':
+					Fruid_Name = "Quả Quýt";
+					break;
+				case '5':
+					Fruid_Name = "Quả Mận";
+					break;
+				case '6':
+					Fruid_Name = "Quả Xoài";
+					break;
+				default:
+					Fruid_Name = "Không tìm thấy!";
+			}
+			//Print Fruit name
+			document.write(Fruid_Name);
+			
+		</script>
+	</body>
+</html>

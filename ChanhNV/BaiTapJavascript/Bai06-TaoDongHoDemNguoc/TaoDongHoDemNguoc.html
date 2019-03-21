@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Tạo đồng hồ đếm ngược</title>
+</head>
+<body>
+    <h2>Đồng hồ đếm ngược</h2>
+
+    <div>
+        <strong>
+            Nhập thông tin muốn khởi tạo: <br/>
+        </strong>
+        <input type="text" id="h_val" placeholder="Giờ" value=""/> <br/>
+        <input type="text" id="m_val" placeholder="Phút" value=""/> <br/>
+        <input type="text" id="s_val" placeholder="Giây" value=""/>
+        <input type="button" value="Start" onclick="start('h_val', 'm_val', 's_val');"/>
+        <input type="button" value="Stop" onclick="stop()"/>  <br/> <br/>
+    </div>
+    <div>
+        <span id="h">Giờ</span> :
+        <span id="m">Phút</span> :
+        <span id="s">Giây</span>
+    </div>
+
+
+    <script src="./taodonghodemnguoc.js"></script>
+</body>
+</html>

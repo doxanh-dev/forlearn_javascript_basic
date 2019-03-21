@@ -1,0 +1,63 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+	</head>
+	<body>
+		<script language="javascript">
+			//Function validate form
+			function validate()
+			{
+				//Get value from tag input
+				var username = document.getElementById('username').value;
+				var password = document.getElementById('password').value;
+				var re-password = document.getElementById('re-password').value;
+				
+				//Check values
+				if(username == "")
+				{
+					alert('You don"t fill username');
+					return false;
+				}
+				
+				if(password == "")
+				{
+					alert('You don"t fill password');
+					return false;
+				}
+				
+				if(password != re-password)
+				{
+					alert("re-password doesn't same password");
+					return false;
+				}
+				else
+				{
+					alert('username: ' + username + '\n'
+						+ 'password: ' + password + ''
+					)
+				}
+				
+				return true;
+				
+			}
+			
+		</script>
+	
+	
+		<div>
+			<form method="post" action="">
+				<span>Username: </span> <input type="text" value="" name="username" id="username" /></br>
+				<span>Password: </span> <input type="text" value="" name="password" id="password" /></br>
+				<span>Re Password: </span> <input type="text" value="" name="re-password" id="re-password" /></br>
+				<input type="submit" value="Register" onclick="return validate()" />
+			</form>
+			
+			
+		</div>
+		
+		
+		
+		
+	</body>
+</html>

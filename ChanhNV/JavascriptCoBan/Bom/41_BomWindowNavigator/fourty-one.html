@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+	
+	</br>
+	
+	
+	
+	<script>
+		//BOM - Window Navigator trong Javascript
+		//1. Kiểm tra Cookie có được bật không?
+		if(window.cookieEnabled)
+		{
+			alert("Cookie Enable - saishunkan!!!");
+		}
+		else
+		{
+			alert("Cookie disabled!!!")
+		}
+		
+		
+		//2. Kiểm tra tên trình duyệt đang sử dụng
+		// dùng thuộc tính navigator.appName và thuộc tính navigator.appCodeName
+		//dùng để kiểm tra tên mã code của trình duyệt
+		document.write("Check app name ussing Cookie" + "</br>")
+		document.write("App name: " + window.navigator.appName + "</br>");
+		document.write("Check Code name ussing Cookie" + "</br>");
+		document.write("Code Name: " + window.navigator.appCodeName);
+		
+		//3. Kiểm tra Engine của trình duyệt
+		//sử dụng thuộc tính navigator.product.
+		document.write("Check Engine" + "</br>");
+		document.write("Engine: " + navigator.product + "</br>");
+		
+		//4. Kiểm tra Vesion của trình duyệt
+		//sử dụng thuộc tính navigator.appVersion hoặc navigator.userAgent.
+		document.write("Check Vesion" + "</br>");
+		document.write("Method 1 Vesion:  " + "</br>" + navigator.appVersion + "</br>");
+		document.write("Method 2: userAgent  " + "</br>" + navigator.userAgent + "</br>");
+		
+		//5. Kiểm tra hệ điều hành của Client
+		//Javascript cũng có thể xem hệ điều hành cách sử dụng thuộc tính navigator.platform.
+		document.write("Check platform" + "</br>");
+		document.write("Hệ điều hành: " + navigator.platform);
+		
+		//6. Kiểm tra ngôn ngữ của trình duyệt
+		document.write("Check language browser:" + "</br>");
+		document.write("Language browser: " + navigator.language);
+		
+		
+		//Lời kết
+		//Việc sử dụng đối tượng Navigator này bạn có thể lấy toàn bộ thông tin
+		// về trình duyệt và hệ điều hành của người dùng, /
+		//và nếu bạn muốn lấy các thông tin đó lưu vào cơ sở dữ liệu
+		//thì hãy sử dụng Ajax, tuy nhiên trong thực tế ta rất ít khi sử dụng các thông tin đó.
+		
+		
+		
+	</script>
+
+</body>
+</html>

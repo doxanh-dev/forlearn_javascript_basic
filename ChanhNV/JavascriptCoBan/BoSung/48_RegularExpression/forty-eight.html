@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+	
+    
+
+    <script type="text/javascript">
+        //pattern là chuỗi Regular Expression
+        // modifiers là thông số cấu hình cho chuỗi pattern và nó có các giá trị:
+        // i : so khớp không quan tâm đến chữ hoa chữ thường
+        // g : so khợp toàn bộ chuỗi cần tìm
+        // m : so khớp luôn cả các dữ liệu xuống dòng (multiline)
+		//Pattern kiểm tra chuỗi có tồn tại chữ "saishunkan" không,
+        // không phân biệt chữ hoa chữ thường và tìm toàn bộ tài liệu.
+        var pattern = /saishunkan/igm;
+	
+        //Ví dụ: Kiểm tra trong chuỗi có xuất hiện chữ saishunkan hay không?
+        var patt = /saishunkan/;
+        if(patt.test('Welcome saishunkan')){
+            document.write('string have saishunkan!');
+        }
+        else{
+            document.write('string don\'t have saishunkan');
+        }
+        document.write('</br>');
+        
+        //Ví dụ: Kiểm tra chuỗi có ít nhất một chữ n
+        if(/n+/.test('hello')){
+            document.write('string have n!');
+        }
+        else{
+            document.write('string dont\'t have n!' );
+        }
+        document.write('</br>');
+
+        //Ví dụ: Kiểm tra trong chuỗi có xuất hiện số hay không?
+        if(/[0-9]/.test('hello1233'))
+        {
+            document.write('string have number!')
+        }
+        else{
+            document.write('string dont\'t have number');
+        }
+        document.write('</br>');
+
+
+        //Ví dụ: Kiểm tra trong chuỗi không hoặc có xuất hiện số
+        if(/[0-9]*/.test('saishunkan')){
+            document.write('luon luon chay')
+        }
+        else{
+            document.write('Khong bao gio chay');
+        }
+        document.write('</br>');
+
+        //Ví dụ: Kiểm tra trong chuỗi có chữ H (hoa)hay không?
+        if(/H/.test('saishunkan')){
+            document.write('string have H');
+        }
+        else{
+            document.write('string don\'t have H');
+        }
+        document.write('</br>');
+
+        //Rõ ràng trong ví dụ có xuất hiện chữ h mà tại sao nó báo không xuất hiện? 
+        //Lý do là trong chuỗi pattern chúng ta kiểm tra chữ in HOA nhưng trong chuỗi cần kiểm tra thì lại có chữ in thường nên nó báo sai. 
+        //Để giải quyết thì ta thêm chữ i đằng sau chuỗi pattern
+        if(/H/i.test('saishunkan')){
+            document.write('string have H');
+        }
+        else{
+            document.write('string don\'t have H');
+        }
+        document.write('</br>');
+
+
+	</script>
+</body>
+</html>

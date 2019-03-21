@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+	
+	
+	<script>
+		//Hàm array.valueOf():tương tự như hàm array.join()
+		//nối các phần tử với nhau vào một chuỗi cách nhau bởi dấu phẩy.
+		var mang = ["Học", "lập", "trình", "tại", "freetuts.net"];
+		document.write(mang.valueOf());
+		document.write('<br/>');
+		
+		//Hàm array.push():thêm một phần tử vào cuối mảng.
+		// Thêm và in
+		mang.push("Miễn phí");
+		document.write(mang.valueOf());
+		
+		//Hàm array.pop(): xóa đi phần tử cuối cùng trong mảng.
+		// Xóa và in
+		mang.pop();
+		document.write('<br/>');
+		document.write(mang.valueOf());
+		document.write('<br/>');
+		
+		//Hàm array.shift()xóa phần tử đầu tiên của mảng, 
+		//sau đó dồn các phần tử phía sau xuống một bậc.
+		// Xóa và in
+		mang.shift();
+		document.write(mang.valueOf());
+		document.write('<br/>');
+		
+		//array.unshift():thêm một phần tử vào vị trí đầu tiên của mảng
+		//đồng thời đẩy các phẩn từ phía sau lên một bậc.
+		// Thêm và in
+		mang.unshift("Chào Mừng");
+		document.write(mang.valueOf());
+		document.write('<br/>');
+		
+		//Hàm array.splice() ba tham số truyền vào như sau:
+		//splice(position_add, num_element_remove, value1, value2, ...)\
+		var arraysplice = ["Học", "lập", "trình", "tại", "freetuts.net"];
+		arraysplice.splice(1, 2, 'PHP', 'căn bản ');
+		document.write(arraysplice.valueOf());
+		document.write('<br/>');
+		//Có thể sẽ lợi dụng hàm này để xóa đi một số phần tử.
+		arraysplice.splice(0, 1);
+		document.write(arraysplice.valueOf());
+		document.write('<br/>');
+		
+		// array.sort():sắp xếp các phần tử trong mảng theo thứ tự chữ cái alpha
+		arraysplice.sort();
+		document.write(arraysplice.valueOf());
+		document.write('<br/>');
+		
+		//array.reverse():đảo ngược các phẩn tử lại
+		//Vị trí đầu sẽ được chuyển xuống cuối mảng 
+		//và vị trí cuối mảng sẽ được chuyển lên đầu mảng.
+		arraysplice.reverse();
+		document.write(arraysplice.valueOf());
+		document.write('<br/>');
+		
+		//array.concat(): nối hai mảng với nhau
+		//và trả về một mảng gồm tổng số phần tử của hai mảng đó.
+		
+		
+		//array.slice(): lấy một số phần tử con trong mảng.
+		//Có hai tham số truyền vào như sau: slice(start, end).
+		var mang = ["Học", "lập", "trình", "tại", "freetuts.net"];
+		// Lấy phần tử "tại" và "freetuts.net"
+		var mang_moi = mang.slice(3, 5);
+		 
+		// In ra thử
+		document.write(mang_moi.valueOf());
+		
+	</script>
+
+</body>
+</html>

@@ -1,0 +1,82 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+	</head>
+	<body>
+		<div>
+			<input type="text" id="username" value="" />
+			
+			<div id="show_result">
+			
+			</div>
+		</div>
+	
+		
+		<div>
+			<h4>Bạn hãy zoom trình duyệt</h4>
+			<div id="show_event_window"></div>
+		</div>
+	
+		
+		<div>
+			<input type="button" id="button_get_object"  value="Click me to Show number" />
+			<div id="show_result_with_parameter">
+				
+			</div>
+		</div>
+	
+	
+	
+		<script language="javascript">
+			//Xây dựng chức năng khi nhập dữ liệu vào ô input thì hiển thị giá trị của ô input đó ra bên ngoài
+			
+			//Get object
+			var input_get_username = document.getElementById("username");
+			
+			// Add event for object
+			input_get_username.addEventListener('keyup', function(){
+				//Set value for div have id=show_result
+				document.getElementById('show_result').innerHTML = input_get_username.value;
+			});
+			
+			// Implement event for object
+			input_get_username.addEventListener('keyup', function(){
+				if(input_get_username.value.length > 5)
+				{
+					alert("Bạn đã nhập nhiều hơn 5 ký tự");
+				}
+			});
+			input_get_username.addEventListener('mouseout', function(){
+				alert("Hello Good bye");
+			})
+			
+			
+			//Add event with window
+			window.addEventListener("resize", function(){
+            document.getElementById("result").innerHTML = "Bạn vừa zoom Browser";
+			});
+			
+			
+			//Function alert two parameter number
+			function showTwoNumber(numberOne, numberTwo)
+			{
+				alert('numberOne is: '+ numberOne+ ' numberTwo is: ' + numberTwo);
+			}
+			
+			//Add parameter in function addEventListener
+			//Get Object
+			var button_get_object = document.getElementById('button_get_object');
+			//Add event for object
+			button_get_object.addEventListener('click', function(){
+				numberOne = prompt('Please fill numberOne:' );
+				numberTwo = prompt('Please fill numberOne:' );
+				showTwoNumber(numberOne,numberTwo);
+			})
+			
+			
+			
+			
+		</script>
+	</body>
+</html>

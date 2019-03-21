@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+	
+	</br>
+	
+	
+	
+	<script>
+		//BOM - Screen trong Javascript
+		//Tìm hiểu một số thuộc tính sau:
+		//screen.width
+		//screen.height
+		//screen.availWidth
+		//screen.availHeight
+		//screen.colorDepth
+		//screen.pixelDepth
+		//Khi chúng ta ghi screen.with tức là ghi tắt của window.screen.with.
+		
+		//1. Lấy width và height của màn hình
+		//sử dụng thuộc tính screen.width để lấy chiều rộng 
+		//screen.height để lấy chiều cao của màn hình, 
+		document.write("Width screen: " + screen.width + "</br>");
+		document.write("Height screen: " + screen.height + "</br>")
+		//Ngoài ra để lấy chiều rộng và chiều cao mà không tính các tools tính năng của trình duyệt
+		//thì bạn sử dụng screen.availWidth và screen.availHeight.
+		document.write("With Available screen: " + screen.availWidth + "<br/>");
+		document.write("Height Available screen: " + screen.availHeight + "</br>");
+		
+		
+		//2. lấy Color Depth của screen
+		//lấy color depth của screen thì ta sử dụng thuộc tính screen.colorDepth
+		document.write("Color Depth: " + screen.colorDepth + "</br>");
+		
+		//3. Lấy số Pixel depth của screen
+		document.write("Pixel Depth: " + screen.pixelDepth);
+		
+		//Thực tế những thông tin về screen này ta rất ít khi sử dụng khi xây dựng website
+		//chỉ dùng khi bạn lập trình Game bằng javascript
+		
+		
+		
+	</script>
+
+</body>
+</html>

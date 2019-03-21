@@ -1,0 +1,43 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+	</head>
+	<body>
+		
+		<script language="javascript">
+			document.write('Lệnh break trong Javascript:');
+			document.write('</br>');
+			document.write('Vòng lặp for lặp từ 1 tới 10 và bị dừng tại vòng lặp thứ 5');
+			document.write('</br>');
+			for(var index = 1; index <= 10; index++)
+			{
+				document.write(index + ' ');
+				if(index == 5)
+				{
+					document.write('--Tại index = ' + index + ' vòng lặp bị dừng do break!');
+					break;
+				}
+			}
+			document.write('</br>');
+			
+			document.write('Vòng lặp while bị nhảy ra khỏi vòng lặp khi biến i chia hết cho 9');
+			document.write('</br>');
+			var indexArray2 = 1;
+			while (indexArray2 <= 1000)
+			{
+				document.write(indexArray2 + " ");
+				
+				if(indexArray2 % 9 == 0)
+				{
+					document.write('Vòng lặp bị dừng do có break');
+					break;
+				}
+				indexArray2++;
+				
+			}
+			document.write('</br>');
+			
+		</script>
+	</body>
+</html>
