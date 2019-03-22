@@ -12,6 +12,12 @@ class AllPostContainer extends Component {
                         <td>{x.fullname}</td>
                         <td>{x.address}</td>
                         <td>{x.content}</td>
+                        <td>
+                            <button>Edit</button>
+                        </td>
+                        <td>
+                            <button>Delete</button>
+                        </td>
                     </tr>
                 )
             }
@@ -20,19 +26,19 @@ class AllPostContainer extends Component {
     }
 
     render() {
-        //console.log("dlist: "+ JSON.stringify(this.props.listData.listData))
         return (
             <div className="listSV">
                 <h3>Danh sách sinh viên</h3>
                 <table border="1">
                     <thead>
                         <tr>
-                            <th width="100">ID</th>
-                            <th width="200">Fullname</th>
-                            <th width="200">Address</th>
-                            <th>Content</th>
+                            <th width="50">ID</th>
+                            <th width="150">Fullname</th>
+                            <th width="180">Address</th>
+                            <th width="400">Content</th>
+                            <th colSpan="2" width="">Action</th>
                         </tr>
-                        {this.dataRender().length > 0 ? this.dataRender() : <tr><td colSpan="4" className="color-nodata">Khong co du lieu!</td></tr>}
+                        {this.dataRender().length > 0 ? this.dataRender() : <tr><td colSpan="6" className="color-nodata">Không có dữ liệu Sinh viên trong danh sách !</td></tr>}
                     </thead>
                 </table>
             </div>

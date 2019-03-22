@@ -18,16 +18,16 @@ class PostFormContainer extends Component {
 
     submitForm(event) {
         event.preventDefault();
-        var data = this.props.data;
+        var data = this.state.data;
         this.props.createData(data);
         
-        // this.setState({
-        //     data: {
-        //         fullname:"",
-        //         address:"",
-        //         content:""
-        //     }
-        // });
+        this.setState({
+            data: {
+                fullname:"",
+                address:"",
+                content:""
+            }
+        });
     }
 
     onChangeText(event) {
