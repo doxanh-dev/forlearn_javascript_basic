@@ -1,19 +1,15 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import {deletePost} from '../actions/PostActions';
-import {editPost} from '../actions/PostActions';
+import { deletePost } from '../actions/PostActions';
+import { editPost } from '../actions/PostActions';
 
 class AllPostContainer extends Component {
-    // constructor(props){
-    //     super(props);
-    //     this.clickDel = this.clickDel.bind(this);
-    // }
 
-    clickEdit(id){
+    clickEdit(id) {
         this.props.editData(id);
     }
 
-    clickDel(id){
+    clickDel(id) {
         this.props.deleteData(id);
     }
 
@@ -27,10 +23,10 @@ class AllPostContainer extends Component {
                         <td>{x.address}</td>
                         <td>{x.content}</td>
                         <td>
-                            <button onClick={() => {this.clickEdit(index)}}>Edit</button>
+                            <button onClick={() => { this.clickEdit(index) }}>Edit</button>
                         </td>
                         <td>
-                            <button onClick={() => {this.clickDel(index)}}>Delete</button>
+                            <button onClick={() => { this.clickDel(index) }}>Delete</button>
                         </td>
                     </tr>
                 )
@@ -71,10 +67,10 @@ const mapDispatchToProps = dispatch => {
         deleteData(id) {
             dispatch(deletePost(id));
         },
-        editData(id){
+        editData(id) {
             dispatch(editPost(id));
         }
     };
-  }
+}
 
 export default connect(mapStateToProps, mapDispatchToProps)(AllPostContainer);

@@ -2,24 +2,20 @@ const initialState =
 {
     listData: [],
     data: {
-        id:"",
+        id: "",
         fullname: "",
         address: "",
         content: ""
     }
-    //editing: false
 }
 
 const postReducer = (state = initialState, action) => {
-    //console.log("actionPost: " + JSON.stringify(action))
-    // console.log("action.data: "+ JSON.stringify(action.data))
-    // console.log("initialState: "+ JSON.stringify(initialState))
     switch (action.type) {
         case 'ADD_POST':
             action.data.id = state.listData.length === 0 ? 0 : state.listData[state.listData.length - 1].id + 1;
             var newList = initialState.listData;
             newList.push(action.data)
-            return { ...state, listData: newList };
+            return { ...state, listData: newList, data: initialState.data };
 
         case 'DELETE_POST':
             var listData = initialState.listData;
@@ -29,8 +25,12 @@ const postReducer = (state = initialState, action) => {
         case 'EDIT_POST':
             var dataEdit = initialState.listData[action.id];
             var listDataShow = initialState.listData;
-            //console.log("edit: "+ JSON.stringify(dataEdit))
-            return { ...state, listData: listDataShow, data: dataEdit};
+            return { ...state, listData: listDataShow, data: dataEdit };
+
+        case 'UPDATE_POST':
+            var listDataUP = initialState.listData;
+            listDataUP[action.id] = action.data;
+            return { ...state, listData: listDataUP, data: initialState.data };
 
         default:
             return state;

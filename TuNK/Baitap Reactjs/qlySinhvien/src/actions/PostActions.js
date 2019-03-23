@@ -1,9 +1,8 @@
 export const addPost = (data) => (
-    //console.log("action: "+ JSON.stringify(data)),
     {
-    type: 'ADD_POST',
-    data
-});
+        type: 'ADD_POST',
+        data
+    });
 
 export const deletePost = (id) => (
     {
@@ -16,5 +15,13 @@ export const editPost = (id) => (
     {
         type: 'EDIT_POST',
         id
+    }
+);
+
+export const updatePost = (id, data) => (
+    {
+        type: 'UPDATE_POST',
+        id,
+        data
     }
 );
