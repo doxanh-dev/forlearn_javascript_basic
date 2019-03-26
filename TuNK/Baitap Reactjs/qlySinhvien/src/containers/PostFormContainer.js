@@ -60,7 +60,7 @@ class PostFormContainer extends Component {
     render() {
         return (
             <div className="form-post">
-                <h3>Thêm mới sinh viên</h3>
+                <h3>{this.state.data.id === "" ? "Thêm mới sinh viên" : "Cập nhật thông tin sinh viên"}</h3>
                 <form>
                     <div>
                         <div><label className="title">Fullname</label></div>
