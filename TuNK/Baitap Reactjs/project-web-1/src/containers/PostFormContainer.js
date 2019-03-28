@@ -24,6 +24,12 @@ class PostFormContainer extends Component {
                                 <input type="text" name="fullname" placeholder="Fullname"></input>
                             </div>
                         </div>
+                        <div className="two fields">
+                            <div className="field">
+                                <label>Address</label>
+                                <input type="text" name="address" placeholder="Address"></input>
+                            </div>
+                        </div>
                         <div className="three fields">
                             <div className="field">
                                 <label>Class</label>

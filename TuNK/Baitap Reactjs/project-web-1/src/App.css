@@ -3,12 +3,11 @@
   background-color: #f7f4f4;
   min-height: 965px;
 }
-
 .App-link {
   color: #61dafb;
 }
 .container{
-  background-color: #f8f4e4;
+  background-color: #f9f0ca;
   min-height: 965px;
   padding: 0 30px;
 }
@@ -32,7 +31,7 @@
   margin: auto;
   padding-left: 0;
 }
-.home, .post-form {
+.home, .post-form, .history {
   padding-top: 60px;
 }
 h1 {
