@@ -4,7 +4,7 @@ class HistoryContainer extends Component {
     render(){
         return (
             <div>
-                <span>history</span>
+                <span>history 1111111</span>
             </div>
         )
     }
