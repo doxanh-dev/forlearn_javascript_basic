@@ -18,7 +18,7 @@ class HistoryContainer extends Component {
             <div className="history">
                 <h1>Danh sách thông tin sinh viên đăng ký lớp</h1>
                 <div className="content">
-                    <table class="ui selectable celled table">
+                    <table className="ui selectable celled table">
                         <thead>
                             <tr>
                                 <th className="center aligned">ID</th>

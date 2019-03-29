@@ -1,15 +1,51 @@
 import React, { Component } from 'react';
+//import $ from 'jquery';
+//import {checkbox} from 'semantic-ui';
 
 class PostFormContainer extends Component {
-    constructor(props){
+    constructor(props) {
         super(props);
+        this.state = {
+            hobby: [
+                { value: "1", label: "Music" },
+                { value: "2", label: "Sport" },
+                { value: "3", label: "Picnic" },
+                { value: "4", label: "Other" },
+            ]
+        }
         this.returnHome = this.returnHome.bind(this);
+        this.onChangeValue = this.onChangeValue.bind(this)
     }
-    returnHome(event){
+    returnHome(event) {
         event.preventDefault();
         this.props.history.replace({
             pathname: "/"
         });
+    }
+
+    componentDidMount() {
+        window.initCheckbox();
+    }
+
+    onChangeValue(event){
+        event.preventDefault();
+        console.log("Ssssssssssssss")
+        // $('.ui.checkbox')
+        // .checkbox();
+    }
+
+    checkboxRender() {
+        const multiCheckbox = this.state.hobby.map(object => {
+            return (
+                <div className="inline field" key={object.value}>
+                    <div className="ui checkbox">
+                        <input onChange={(event) => {this.onChangeValue(event)}} type="checkbox" tabIndex="0" className="hidden" />
+                        <label>{object.label}</label>
+                    </div>
+                </div>
+            )
+        });
+        return multiCheckbox;
     }
 
     render() {
@@ -47,7 +83,7 @@ class PostFormContainer extends Component {
                                 <label>Gender</label>
                                 <div className="inline fields">
                                     <div className="field">
-                                        <div className="ui radio checkbox">
+                                        <div className="ui radio checkbox ">
                                             <input type="radio" name="gender" tabIndex="0" className="hidden" value="male" />
                                             <label>Male</label>
                                         </div>
@@ -61,6 +97,28 @@ class PostFormContainer extends Component {
                                 </div>
                             </div>
                         </div>
+                        <div className="field">
+                            <label>Hobby</label>
+                            {/* <input type="text" name="address" placeholder="Address"></input> */}
+                        </div>
+                         {this.checkboxRender()}
+                        <div className="inline field">
+                            <div className="ui slider checkbox">
+                                <input type="checkbox" tabIndex="0" className="hidden" />
+                                <label>Slider</label>
+                            </div>
+                            <label></label>
+                        </div>
+                        <div className="inline field">
+                            <div className="ui toggle checkbox">
+                                <input type="checkbox" tabIndex="0" className="hidden" />
+                                <label>Toggle</label>
+                            </div>
+                        </div>
+                        {/* <div className="uk-margin uk-grid-small uk-child-width-auto uk-grid">
+                            <label><input className="uk-checkbox" type="checkbox" /> A</label>
+                            <label><input className="uk-checkbox" type="checkbox" /> B</label>
+                        </div> */}
                         <div className="field">
                             <label>Notes</label>
                             <textarea rows="5"></textarea>
@@ -77,6 +135,7 @@ class PostFormContainer extends Component {
                         </div>
                     </form>
                 </div>
+ 
             </div>
         );
     }
