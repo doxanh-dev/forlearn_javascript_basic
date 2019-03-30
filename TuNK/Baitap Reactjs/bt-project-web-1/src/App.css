@@ -46,6 +46,9 @@ form label {
 #btn-back {
   margin-left: 15px;
 }
+.label-style {
+  margin-left: -15px !important;
+}
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);

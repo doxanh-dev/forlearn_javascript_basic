@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 
 class PostFormContainer extends Component {
     constructor(props) {
@@ -12,7 +13,6 @@ class PostFormContainer extends Component {
             ]
         }
         this.returnHome = this.returnHome.bind(this);
-        this.onChangeValue = this.onChangeValue.bind(this)
     }
     returnHome(event) {
         event.preventDefault();
@@ -25,19 +25,12 @@ class PostFormContainer extends Component {
         window.initCheckbox();
     }
 
-    onChangeValue(event){
-        event.preventDefault();
-        console.log("Ssssssssssssss")
-        // $('.ui.checkbox')
-        // .checkbox();
-    }
-
     checkboxRender() {
         const multiCheckbox = this.state.hobby.map(object => {
             return (
-                <div className="inline field" key={object.value}>
+                <div className="field" key={object.value}>
                     <div className="ui checkbox">
-                        <input onChange={(event) => {this.onChangeValue(event)}} type="checkbox" tabIndex="0" className="hidden" />
+                        <input type="checkbox" name="hobby" tabIndex="0" className="hidden" />
                         <label>{object.label}</label>
                     </div>
                 </div>
@@ -54,20 +47,20 @@ class PostFormContainer extends Component {
                     <form className="ui form uk-width-1-2 uk-margin-auto">
                         <div className="two fields">
                             <div className="field">
-                                <label>Fullname</label>
+                                <label className="label-style">Fullname</label>
                                 <input type="text" name="fullname" placeholder="Fullname"></input>
                             </div>
                         </div>
                         <div className="two fields">
                             <div className="field">
-                                <label>Address</label>
+                                <label className="label-style">Address</label>
                                 <input type="text" name="address" placeholder="Address"></input>
                             </div>
                         </div>
                         <div className="three fields">
                             <div className="field">
-                                <label>Class</label>
-                                <select>
+                                <label className="label-style">Class</label>
+                                <select name="class">
                                     <option value="">---</option>
                                     <option value="CNTT1">CNTT1</option>
                                     <option value="CNTT2">CNTT2</option>
@@ -78,7 +71,7 @@ class PostFormContainer extends Component {
                         </div>
                         <div className="two fields">
                             <div className=" field">
-                                <label>Gender</label>
+                                <label className="label-style">Gender</label>
                                 <div className="inline fields">
                                     <div className="field">
                                         <div className="ui radio checkbox ">
@@ -96,30 +89,14 @@ class PostFormContainer extends Component {
                             </div>
                         </div>
                         <div className="field">
-                            <label>Hobby</label>
-                            {/* <input type="text" name="address" placeholder="Address"></input> */}
-                        </div>
-                         {this.checkboxRender()}
-                        <div className="inline field">
-                            <div className="ui slider checkbox">
-                                <input type="checkbox" tabIndex="0" className="hidden" />
-                                <label>Slider</label>
-                            </div>
-                            <label></label>
-                        </div>
-                        <div className="inline field">
-                            <div className="ui toggle checkbox">
-                                <input type="checkbox" tabIndex="0" className="hidden" />
-                                <label>Toggle</label>
+                            <label className="label-style">Hobby</label>
+                            <div className="inline fields">
+                                {this.checkboxRender()}
                             </div>
                         </div>
-                        {/* <div className="uk-margin uk-grid-small uk-child-width-auto uk-grid">
-                            <label><input className="uk-checkbox" type="checkbox" /> A</label>
-                            <label><input className="uk-checkbox" type="checkbox" /> B</label>
-                        </div> */}
                         <div className="field">
-                            <label>Notes</label>
-                            <textarea rows="5"></textarea>
+                            <label className="label-style">Notes</label>
+                            <textarea rows="5" name="note"></textarea>
                         </div>
                         <div className="uk-text-left">
                             <button type="submit" className="ui telegram button">
@@ -133,9 +110,18 @@ class PostFormContainer extends Component {
                         </div>
                     </form>
                 </div>
- 
+
             </div>
         );
     }
 }
-export default PostFormContainer;
+
+const mapStateToProps = state => {
+    console.log("state: "+ JSON.stringify(state))
+    return {
+        data: Object.assign({}, state.data)
+    }
+
+};
+
+export default connect(mapStateToProps, null)(PostFormContainer);
