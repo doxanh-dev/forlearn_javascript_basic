@@ -31,7 +31,7 @@
   margin: auto;
   padding-left: 0;
 }
-.home, .post-form, .history {
+.home, .post-form, .history, .post-form-ok {
   padding-top: 60px;
 }
 h1 {
@@ -48,6 +48,14 @@ form label {
 }
 .label-style {
   margin-left: -15px !important;
+}
+.color-nodata{
+  color: red;
+  font-weight: bold;
+  text-align: center !important;
+}
+.icon {
+  margin: 0px !important;
 }
 @keyframes App-logo-spin {
   from {

@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { addPost } from '../actions/PostActions';
+import { updatePost } from '../actions/PostActions';
 
 class PostFormContainer extends Component {
     constructor(props) {
@@ -15,6 +17,8 @@ class PostFormContainer extends Component {
         }
         this.returnHome = this.returnHome.bind(this);
         this.onChangeText = this.onChangeText.bind(this);
+        this.submitForm = this.submitForm.bind(this);
+        this.gotoPageSuccess = this.gotoPageSuccess.bind(this);
     }
 
     componentWillMount() {
@@ -29,11 +33,9 @@ class PostFormContainer extends Component {
         this.setState({
             data: newData
         });
-        console.log("data: " + JSON.stringify(this.state.data))
     }
 
     onChangeCheckbox(event, value) {
-        console.log("hello")
         var index = this.state.data.hobby.indexOf(value);
         const data = this.state.data;
         if (index > -1) {
@@ -47,6 +49,49 @@ class PostFormContainer extends Component {
         this.setState({ data: data });
     }
 
+    submitForm(event) {
+        event.preventDefault();
+        var data = this.state.data;
+        if (data.fullname === null || data.fullname === "") {
+            alert("Ten khong duoc de trong!");
+            document.getElementsByName("fullname")[0].focus();
+            return;
+        }
+        else if (data.address === null || data.address === "") {
+            alert("Dia chi khong duoc de trong!");
+            document.getElementsByName("address")[0].focus();
+            return;
+        }
+        else if (data.class === null || data.class === "") {
+            alert("Lop phai được chọn !");
+            document.getElementsByName("class")[0].focus();
+            return;
+        }
+        else if (data.gender === null || data.gender === "") {
+            alert("Giới tính phai được chọn !");
+            return;
+        }
+        else if (data.hobby.length === 0) {
+            alert("Sở thích phai được chọn !");
+            return;
+        }
+        else {
+            if (data.id === "") {
+                this.props.createData(data);
+            }
+            else {
+                this.props.updateData(data.id, data);
+            }
+            this.gotoPageSuccess();
+        }
+    }
+
+    gotoPageSuccess() {
+        this.props.history.replace({
+            pathname: "/postformOk"
+        });
+    }
+
     returnHome(event) {
         event.preventDefault();
         this.props.history.replace({
@@ -56,13 +101,14 @@ class PostFormContainer extends Component {
 
     componentDidMount() {
         window.initCheckbox();
+        window.initRadioCheckbox();
     }
 
     checkboxRender() {
         const multiCheckbox = this.state.hobby.map(object => {
             return (
                 <div className="field" key={object.value}>
-                    <div className="ui checkbox">
+                    <div className="">
                         <input type="checkbox"
                             name="hobby"
                             tabIndex="0"
@@ -81,7 +127,7 @@ class PostFormContainer extends Component {
     render() {
         return (
             <div className="post-form">
-                <h1>Đăng ký lớp thông tin sinh viên</h1>
+                <h1>{this.state.data.id === "" ? "Đăng ký lớp thông tin sinh viên" : "Cập nhật thông tin sinh viên"}</h1>
                 <div className="content">
                     <form className="ui form uk-width-1-2 uk-margin-auto">
                         <div className="two fields">
@@ -109,32 +155,34 @@ class PostFormContainer extends Component {
                                 <label className="label-style">Class</label>
                                 <select name="class" onChange={this.onChangeText} value={this.state.data.class}>
                                     <option value="">---</option>
-                                    <option value="CNTT1" >CNTT1</option>
+                                    <option value="CNTT1">CNTT1</option>
                                     <option value="CNTT2">CNTT2</option>
                                     <option value="CNTT3">CNTT3</option>
                                     <option value="CNTT4">CNTT4</option>
                                 </select>
                             </div>
                         </div>
-                        <div className="two fields">
-                            <div className=" field">
+                        <div className="grouped fields">
+                            <div className="field">
                                 <label className="label-style">Gender</label>
                                 <div className="inline fields">
                                     <div className="field">
-                                        <div className="ui radio checkbox ">
+                                        <div className="">
                                             <input type="radio"
                                                 name="gender"
                                                 value="male"
-                                                onChange={this.onChangeText}
+                                                className="hidden"
+                                                onChange={event => this.onChangeText(event)}
                                                 checked={this.state.data.gender === "male" ? true : false} />
                                             <label>Male</label>
                                         </div>
                                     </div>
                                     <div className="field">
-                                        <div className="ui radio checkbox">
+                                        <div className="">
                                             <input type="radio"
                                                 name="gender"
-                                                onChange={this.onChangeText}
+                                                className="hidden"
+                                                onChange={event => this.onChangeText(event)}
                                                 value="female"
                                                 checked={this.state.data.gender === "female" ? true : false} />
                                             <label>Female</label>
@@ -158,13 +206,13 @@ class PostFormContainer extends Component {
                         </div>
                         <input type="hidden" name="id" value={this.state.data.id} ></input>
                         <div className="uk-text-left">
-                            <button type="submit" className="ui telegram button">
-                                <i className="plus icon"></i>
-                                Thêm mới
+                            <button type="submit" className="ui telegram button" onClick={this.submitForm}>
+                                {this.state.data.id === "" ? <i className="plus icon"></i> : <i className="sync icon"></i>}
+                                &nbsp; {this.state.data.id === "" ? "Thêm mới" : "Cập nhật"}
                             </button>
                             <button type="submit" id="btn-back" className="ui whatsapp button" onClick={this.returnHome}>
                                 <i className="reply icon"></i>
-                                Trở về
+                                &nbsp; Trở về
                             </button>
                         </div>
                     </form>
@@ -177,9 +225,18 @@ class PostFormContainer extends Component {
 
 const mapStateToProps = state => {
     return {
-        data: Object.assign({}, state.data)
+        data: state.data
     }
-
 };
 
-export default connect(mapStateToProps, null)(PostFormContainer);
+const mapDispatchToProps = dispatch => {
+    return {
+        createData(data) {
+            dispatch(addPost(data));
+        },
+        updateData(id, data) {
+            dispatch(updatePost(id, data));
+        }
+    }
+}
+export default connect(mapStateToProps, mapDispatchToProps)(PostFormContainer);
