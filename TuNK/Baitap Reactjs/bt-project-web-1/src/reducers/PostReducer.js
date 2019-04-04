@@ -35,6 +35,9 @@ const postReducer = (state = initialState, action) => {
             listDataUp[action.id] = action.data;
             return { ...state, listData: listDataUp, data: action.dataDefault.data }
 
+        case "CLEAR_DATA":
+            return {...state, data: action.dataDefault.data}
+            
         default:
             return state;
     }

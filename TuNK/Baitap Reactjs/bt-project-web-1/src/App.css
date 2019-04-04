@@ -57,6 +57,14 @@ form label {
 .icon {
   margin: 0px !important;
 }
+.uk-checkbox{
+  position: relative;
+  top: 5px;
+  margin-right: 5px;
+}
+.uk-radio{
+  margin-right: 5px;
+}
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);

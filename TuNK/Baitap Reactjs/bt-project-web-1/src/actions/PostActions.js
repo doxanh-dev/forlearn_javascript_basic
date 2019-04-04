@@ -29,6 +29,13 @@ export const updatePost = (id, data) => (
     }
 );
 
+export const clearData = () => (
+    {
+        type: 'CLEAR_DATA',
+        dataDefault: defaultDataCreate()
+    }
+);
+
 function defaultDataCreate() {
     return {
         data: {

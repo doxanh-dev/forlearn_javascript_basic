@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { addPost } from '../actions/PostActions';
 import { updatePost } from '../actions/PostActions';
+import { clearData } from '../actions/PostActions';
 
 class PostFormContainer extends Component {
     constructor(props) {
@@ -94,6 +95,7 @@ class PostFormContainer extends Component {
 
     returnHome(event) {
         event.preventDefault();
+        this.props.clearData();
         this.props.history.replace({
             pathname: "/"
         });
@@ -107,18 +109,15 @@ class PostFormContainer extends Component {
     checkboxRender() {
         const multiCheckbox = this.state.hobby.map(object => {
             return (
-                <div className="field" key={object.value}>
-                    <div className="">
-                        <input type="checkbox"
+                    <label key={object.value}>
+                        <input type="checkbox" 
+                            className="uk-checkbox"
                             name="hobby"
-                            tabIndex="0"
-                            className="hidden"
                             value={object.value}
                             onChange={event => this.onChangeCheckbox(event, object.value)}
                             checked={this.state.data.hobby.indexOf(object.value) > -1 ? true : false} />
-                        <label>{object.label}</label>
-                    </div>
-                </div>
+                        {object.label}
+                    </label>
             )
         });
         return multiCheckbox;
@@ -165,36 +164,35 @@ class PostFormContainer extends Component {
                         <div className="grouped fields">
                             <div className="field">
                                 <label className="label-style">Gender</label>
-                                <div className="inline fields">
-                                    <div className="field">
-                                        <div className="">
-                                            <input type="radio"
-                                                name="gender"
-                                                value="male"
-                                                className="hidden"
-                                                onChange={event => this.onChangeText(event)}
-                                                checked={this.state.data.gender === "male" ? true : false} />
-                                            <label>Male</label>
-                                        </div>
-                                    </div>
-                                    <div className="field">
-                                        <div className="">
-                                            <input type="radio"
-                                                name="gender"
-                                                className="hidden"
-                                                onChange={event => this.onChangeText(event)}
-                                                value="female"
-                                                checked={this.state.data.gender === "female" ? true : false} />
-                                            <label>Female</label>
-                                        </div>
-                                    </div>
+                                <div className="uk-margin uk-grid-small uk-child-width-auto uk-grid">
+                                    <label>
+                                        <input className="uk-radio"
+                                            type="radio"
+                                            name="gender"
+                                            onChange={this.onChangeText}
+                                            checked={this.state.data.gender === "male" ? true : false}
+                                            value="male" />
+                                        Male
+                                    </label>
+                                    <label>
+                                        <input className="uk-radio"
+                                            type="radio"
+                                            name="gender"
+                                            onChange={this.onChangeText}
+                                            checked={this.state.data.gender === "female" ? true : false}
+                                            value="female" />
+                                        Female
+                                    </label>
                                 </div>
                             </div>
+
                         </div>
                         <div className="field">
                             <label className="label-style">Hobby</label>
                             <div className="inline fields">
-                                {this.checkboxRender()}
+                                <div className="uk-margin uk-grid-small uk-child-width-auto uk-grid">
+                                    {this.checkboxRender()}
+                                </div>
                             </div>
                         </div>
                         <div className="field">
@@ -236,6 +234,9 @@ const mapDispatchToProps = dispatch => {
         },
         updateData(id, data) {
             dispatch(updatePost(id, data));
+        },
+        clearData(){
+            dispatch(clearData());
         }
     }
 }
