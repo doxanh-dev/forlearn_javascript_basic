@@ -1,6 +1,10 @@
 export function convertArrToString(array) {
-    // console.log("array: "+ JSON.stringify(array))
     var result = "";
+    var index = array.indexOf("4");
+    if(index > -1){
+        array.splice(index,1);
+        array.push("4");
+    }
     for (var i = 0; i < array.length; i++) {
         if (array[i] === "1") {
             result += "Music, ";
@@ -16,6 +20,5 @@ export function convertArrToString(array) {
         }
     }
     result = result.substr(0, result.length - 2);
-    //console.log("result: "+ result)
     return result;
 }

@@ -6,6 +6,13 @@ export const addPost = (data) => (
     }
 );
 
+export const confirmData = (data) => (
+    {
+        type: 'CONFIRM_DATA',
+        data
+    }
+);
+
 export const deletePost = (id) => (
     {
         type: 'DELETE_POST',

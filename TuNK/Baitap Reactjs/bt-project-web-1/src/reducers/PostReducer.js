@@ -20,6 +20,9 @@ const postReducer = (state = initialState, action) => {
             list.push(action.data);
             return { ...state, listData: list, data: action.dataDefault.data }
 
+        case "CONFIRM_DATA":
+            return { ...state, data: action.data }
+
         case "DELETE_POST":
             var listData = initialState.listData;
             listData.splice(action.id, 1);
@@ -36,8 +39,8 @@ const postReducer = (state = initialState, action) => {
             return { ...state, listData: listDataUp, data: action.dataDefault.data }
 
         case "CLEAR_DATA":
-            return {...state, data: action.dataDefault.data}
-            
+            return { ...state, data: action.dataDefault.data }
+
         default:
             return state;
     }

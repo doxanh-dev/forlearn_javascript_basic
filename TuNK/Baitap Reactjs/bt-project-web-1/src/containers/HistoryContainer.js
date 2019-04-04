@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { convertArrToString } from '../utils/Convert';
 import { deletePost } from '../actions/PostActions';
 import { editPost } from '../actions/PostActions';
 
@@ -31,7 +30,6 @@ class HistoryContainer extends Component {
     datarender() {
         let item = this.props.data.listData.map(
             (x, index) => {
-                x.hiddenHobby = convertArrToString(x.hobby);
                 return (
                     <tr key={index}>
                         <td className="uk-text-center">{index + 1}</td>

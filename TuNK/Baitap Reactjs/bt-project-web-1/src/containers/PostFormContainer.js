@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { addPost } from '../actions/PostActions';
-import { updatePost } from '../actions/PostActions';
 import { clearData } from '../actions/PostActions';
+import { confirmData } from '../actions/PostActions';
 
 class PostFormContainer extends Component {
     constructor(props) {
@@ -19,13 +18,12 @@ class PostFormContainer extends Component {
         this.returnHome = this.returnHome.bind(this);
         this.onChangeText = this.onChangeText.bind(this);
         this.submitForm = this.submitForm.bind(this);
-        this.gotoPageSuccess = this.gotoPageSuccess.bind(this);
     }
 
     componentWillMount() {
         this.setState({ data: this.props.data });
     }
-
+    
     onChangeText(event) {
         var newData = this.state.data;
         var target = event.target;
@@ -77,20 +75,12 @@ class PostFormContainer extends Component {
             return;
         }
         else {
-            if (data.id === "") {
-                this.props.createData(data);
-            }
-            else {
-                this.props.updateData(data.id, data);
-            }
-            this.gotoPageSuccess();
+            //chuyển sang màn hình confirm
+            this.props.confirmData(data);
+            this.props.history.replace({
+                pathname: "/postformcon"
+            });
         }
-    }
-
-    gotoPageSuccess() {
-        this.props.history.replace({
-            pathname: "/postformOk"
-        });
     }
 
     returnHome(event) {
@@ -109,15 +99,15 @@ class PostFormContainer extends Component {
     checkboxRender() {
         const multiCheckbox = this.state.hobby.map(object => {
             return (
-                    <label key={object.value}>
-                        <input type="checkbox" 
-                            className="uk-checkbox"
-                            name="hobby"
-                            value={object.value}
-                            onChange={event => this.onChangeCheckbox(event, object.value)}
-                            checked={this.state.data.hobby.indexOf(object.value) > -1 ? true : false} />
-                        {object.label}
-                    </label>
+                <label key={object.value}>
+                    <input type="checkbox"
+                        className="uk-checkbox"
+                        name="hobby"
+                        value={object.value}
+                        onChange={event => this.onChangeCheckbox(event, object.value)}
+                        checked={this.state.data.hobby.indexOf(object.value) > -1 ? true : false} />
+                    {object.label}
+                </label>
             )
         });
         return multiCheckbox;
@@ -205,8 +195,8 @@ class PostFormContainer extends Component {
                         <input type="hidden" name="id" value={this.state.data.id} ></input>
                         <div className="uk-text-left">
                             <button type="submit" className="ui telegram button" onClick={this.submitForm}>
-                                {this.state.data.id === "" ? <i className="plus icon"></i> : <i className="sync icon"></i>}
-                                &nbsp; {this.state.data.id === "" ? "Thêm mới" : "Cập nhật"}
+                                <i className="check icon"></i>
+                                &nbsp; Xác nhận
                             </button>
                             <button type="submit" id="btn-back" className="ui whatsapp button" onClick={this.returnHome}>
                                 <i className="reply icon"></i>
@@ -215,7 +205,6 @@ class PostFormContainer extends Component {
                         </div>
                     </form>
                 </div>
-
             </div>
         );
     }
@@ -229,14 +218,11 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
     return {
-        createData(data) {
-            dispatch(addPost(data));
-        },
-        updateData(id, data) {
-            dispatch(updatePost(id, data));
-        },
-        clearData(){
+        clearData() {
             dispatch(clearData());
+        },
+        confirmData(data) {
+            dispatch(confirmData(data));
         }
     }
 }

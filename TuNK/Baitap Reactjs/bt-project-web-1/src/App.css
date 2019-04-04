@@ -31,7 +31,7 @@
   margin: auto;
   padding-left: 0;
 }
-.home, .post-form, .history, .post-form-ok {
+.home, .post-form, .history, .post-form-ok, .post-form-confirm {
   padding-top: 60px;
 }
 h1 {
@@ -61,9 +61,22 @@ form label {
   position: relative;
   top: 5px;
   margin-right: 5px;
+  background-color: white;
 }
 .uk-radio{
   margin-right: 5px;
+  background-color: white;
+}
+.items {
+  padding: 10px;
+}
+.label {
+  margin-right: 10px !important;
+  width: 85px;
+  text-align: center;
+}
+#btn-confirm{
+  margin-top: 25px;
 }
 @keyframes App-logo-spin {
   from {
