@@ -1,0 +1,26 @@
+.App {
+  text-align: center;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+hr {
+  width: 30%;
+  margin: auto;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+p {
+  color: rgb(206, 25, 25)
+}
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
