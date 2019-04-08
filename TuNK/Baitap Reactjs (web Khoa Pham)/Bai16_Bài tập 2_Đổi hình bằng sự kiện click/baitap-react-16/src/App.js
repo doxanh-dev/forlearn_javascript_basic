@@ -12,9 +12,9 @@ class App extends Component {
   }
 
   Next(){
-    if(this.state.index < 7){
+    if(this.state.index < 14){
       this.setState({
-        index: parseInt(this.state.index) + 1
+        index: this.state.index + 1
       });
     }
   }
@@ -22,7 +22,7 @@ class App extends Component {
   Prev(){
     if(this.state.index > 1){
       this.setState({
-        index: parseInt(this.state.index) - 1
+        index: this.state.index - 1
       });
     }
   }
