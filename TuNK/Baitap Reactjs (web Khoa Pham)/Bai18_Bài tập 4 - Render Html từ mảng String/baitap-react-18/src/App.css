@@ -1,0 +1,36 @@
+.App {
+  text-align: center;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+.content {
+  width: 15%;
+  margin: auto;
+  text-align: left;
+}
+
+li {
+  list-style-type: none;
+  padding-left: 40px;
+}
+ul {
+  background-color: aliceblue;
+  padding-left: 0;
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+span {
+  font-weight: bold;
+  color: red;
+}
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
