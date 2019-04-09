@@ -25,7 +25,7 @@ class NodeForm extends Component {
         return (
             <div>
                 <form onSubmit={this.submitForm.bind(this)}>
-                    <input type="text" placeholder="Nhập ghi chú" ref={this.InputRef}></input><br />
+                    <input type="text" id="input-note" placeholder="Nhập ghi chú" ref={this.InputRef}></input><br />
                     <button id="btn-add">Add</button>
                 </form>
             </div>

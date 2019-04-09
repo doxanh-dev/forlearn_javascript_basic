@@ -26,6 +26,12 @@
 #btn-add{
   margin-top: 5px;
 }
+#btn_add {
+  text-align: right ;
+}
+#input-note{
+  width: 100%;
+}
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
