@@ -9,7 +9,7 @@ class NodeForm extends Component {
     submitForm(event) {
         event.preventDefault();
         var textInput = this.InputRef.current;
-        
+
         if (textInput.value === '') {
             alert("Moi nhap ghi chu !!!");
             textInput.focus();
@@ -26,7 +26,7 @@ class NodeForm extends Component {
             <div>
                 <form onSubmit={this.submitForm.bind(this)}>
                     <input type="text" placeholder="Nhập ghi chú" ref={this.InputRef}></input><br />
-                    <button>Add</button>
+                    <button id="btn-add">Add</button>
                 </form>
             </div>
         )

@@ -15,20 +15,25 @@ class List extends Component {
         this.setState(this.state);
     }
 
-    addNote(node){
+    addNote(node) {
         this.state.array.push(node);
         this.setState(this.state);
     }
 
+    noteRender() {
+        const item = this.state.array.map((item, index) => {
+            return (
+                <Note index={index} removeNote={this.removeNote.bind(this)} key={index}>{item}</Note>
+            )
+        });
+        return item;
+    }
+
     render() {
         return (
-            <div>
+            <div className="content">
                 <NodeForm handleAdd={this.addNote.bind(this)}></NodeForm>
-                {this.state.array.map((item, index) => {
-                    return (
-                        <Note index={index} removeNote={this.removeNote.bind(this)} key={index}>{item}</Note>
-                    )
-                })}
+                {this.noteRender().length > 0 ? this.noteRender() : <p className="thongbao">Không có ghi chú nào !</p>}
             </div>
         )
     }
