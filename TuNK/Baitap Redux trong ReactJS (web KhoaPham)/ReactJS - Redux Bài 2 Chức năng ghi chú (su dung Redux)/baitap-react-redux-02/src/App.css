@@ -1,0 +1,42 @@
+.App {
+  text-align: center;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+.item-note {
+  margin: auto;
+  background-color: beige;
+  padding: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.thongbao{
+  color: red;
+  font-weight: bold;
+}
+.content {
+  width: 18%;
+  margin: auto;
+  border: 1px solid blue;
+  padding: 15px;
+}
+#btn-add{
+  margin-top: 5px;
+}
+#btn_add {
+  text-align: right ;
+}
+#input-note{
+  width: 100%;
+}
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
