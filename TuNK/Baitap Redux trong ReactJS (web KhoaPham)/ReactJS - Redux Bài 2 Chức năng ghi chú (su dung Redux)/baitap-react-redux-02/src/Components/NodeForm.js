@@ -6,6 +6,11 @@ class NodeForm extends Component {
         this.InputRef = React.createRef();
     }
 
+    componentDidMount() {
+        var textInput = this.InputRef.current;
+        textInput.focus();
+    }
+
     submitForm(event) {
         event.preventDefault();
         var textInput = this.InputRef.current;
@@ -16,17 +21,15 @@ class NodeForm extends Component {
             return;
         }
         else {
-            this.props.handleAdd(textInput.value);
-            this.InputRef.current.value = '';
+            this.props.handleAdd();
         }
     }
 
     render() {
-        console.log("pppp:"+JSON.stringify(this.props))
         return (
             <div>
                 <form onSubmit={this.submitForm.bind(this)}>
-                    <input type="text" id="input-note" placeholder="Nhập ghi chú" ref={this.InputRef}></input><br />
+                    <input type="text" id="input-note" placeholder="Nhập ghi chú" ref={this.InputRef} onChange={this.props.onChangeText}></input><br />
                     <button id="btn-add">Add</button>
                 </form>
             </div>
